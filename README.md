@@ -18,6 +18,7 @@
 * Documentação da API:
 <br>Link: https://spyware-api.herokuapp.com/swagger-ui/index.html
 
+---
 ## Script do Spyware:
 * Repositório no GitHub:
 <br>Link: https://github.com/DarlanNoetzold/spyware
