@@ -1,0 +1,2 @@
+# spyware-API
+ O API Gateway está hospedado na Heroku e foi desenvolvido com Spring Boot usando um banco de dados (PostgreSQL)) para armazenar os dados coletados. Além disso, ele tem um endpoint para login sendo encriptado para melhor confiabilidade e segurança dos dados. Para a melhor usabilidade da API, um dos endpoints do mesmo tem uma documentação para uma exemplificação de uso de cada endpoint.
