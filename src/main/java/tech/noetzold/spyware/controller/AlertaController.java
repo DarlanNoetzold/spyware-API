@@ -68,4 +68,10 @@ public class AlertaController {
         return new ResponseEntity<Alerta>(alerta, HttpStatus.UNPROCESSABLE_ENTITY);
     }
 
+    @GetMapping("remover/{id}")
+    public String remover(@PathVariable("id") Long id) {
+        alertaService.deleteById(id);
+        return "redirect:/home";
+    }
+
 }
