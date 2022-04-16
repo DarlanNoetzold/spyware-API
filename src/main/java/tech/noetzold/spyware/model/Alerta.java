@@ -1,10 +1,12 @@
 package tech.noetzold.spyware.model;
 
 import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import java.util.Calendar;
 import java.util.Set;
 
 @Entity
@@ -21,8 +23,12 @@ public class Alerta {
     @ManyToOne(cascade=CascadeType.PERSIST)
     private Imagem imagem;
 
-    @Lob
+    @Type(type="text")
     private String processos;
+
+    @Temporal(TemporalType.DATE)
+    @Column(name = "data_cadastro", nullable = false)
+    private Calendar data_cadastro;
 
     public Long getId() {
         return id;
@@ -54,6 +60,14 @@ public class Alerta {
 
     public void setProcessos(String processos) {
         this.processos = processos;
+    }
+
+    public Calendar getData_cadastro() {
+        return Calendar.getInstance();
+    }
+
+    public void setData_cadastro(Calendar data_cadastro) {
+        this.data_cadastro = Calendar.getInstance();
     }
 
     @Override

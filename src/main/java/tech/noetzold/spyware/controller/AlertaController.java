@@ -15,6 +15,7 @@ import tech.noetzold.spyware.service.ImagemService;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.Calendar;
 import java.util.Collection;
 import java.util.List;
 import java.util.Set;
@@ -60,6 +61,7 @@ public class AlertaController {
     public ResponseEntity<Alerta> save(@RequestBody Alerta alerta, HttpServletRequest request, HttpServletResponse response) {
         try {
             alerta.setImagem(imagemService.findById(alerta.getImagem().getId()).get());
+            alerta.setData_cadastro(Calendar.getInstance());
             alerta = alertaService.save(alerta);
             return new ResponseEntity<Alerta>(alerta, HttpStatus.CREATED);
         } catch (Exception e) {
@@ -67,7 +69,6 @@ public class AlertaController {
         }
         return new ResponseEntity<Alerta>(alerta, HttpStatus.UNPROCESSABLE_ENTITY);
     }
-
     @GetMapping("remover/{id}")
     public String remover(@PathVariable("id") Long id) {
         alertaService.deleteById(id);
