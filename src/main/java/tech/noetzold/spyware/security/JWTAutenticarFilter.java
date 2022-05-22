@@ -3,7 +3,6 @@ package tech.noetzold.spyware.security;
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -24,10 +23,7 @@ import java.util.Date;
 public class JWTAutenticarFilter extends UsernamePasswordAuthenticationFilter {
 
     public static final int TOKEN_EXPIRACAO = 600_000;
-
-    @Autowired
-    static TokenApp tokenApp;
-    public static final String TOKEN_SENHA = getTokenApp();
+    public static final String TOKEN_SENHA = TokenApp.getTokenPass();
 
     private final AuthenticationManager authenticationManager;
 
@@ -35,9 +31,6 @@ public class JWTAutenticarFilter extends UsernamePasswordAuthenticationFilter {
         this.authenticationManager = authenticationManager;
     }
 
-    private static String getTokenApp(){
-        return tokenApp.getToken();
-    }
 
     @Override
     public Authentication attemptAuthentication(HttpServletRequest request,

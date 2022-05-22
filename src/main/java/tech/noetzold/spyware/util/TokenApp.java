@@ -1,13 +1,24 @@
 package tech.noetzold.spyware.util;
 
-import org.springframework.boot.context.properties.ConfigurationProperties;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.Properties;
 
-@ConfigurationProperties(prefix = "app")
 public class TokenApp {
 
-    private String token;
+    public static String getTokenPass() {
+        Properties props = new Properties();
+        FileInputStream file = null;
+        try {
+            file = new FileInputStream(
+                    "./src/main/resources/application.properties");
+            props.load(file);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
 
-    public String getToken() {
-        return token;
+        return props.getProperty("app.token");
+
     }
 }
