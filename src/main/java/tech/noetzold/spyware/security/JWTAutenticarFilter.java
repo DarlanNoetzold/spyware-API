@@ -26,8 +26,7 @@ public class JWTAutenticarFilter extends UsernamePasswordAuthenticationFilter {
     public static final int TOKEN_EXPIRACAO = 600_000;
 
     @Autowired
-    static
-    TokenApp tokenApp;
+    static TokenApp tokenApp;
     public static final String TOKEN_SENHA = getTokenApp();
 
     private final AuthenticationManager authenticationManager;
