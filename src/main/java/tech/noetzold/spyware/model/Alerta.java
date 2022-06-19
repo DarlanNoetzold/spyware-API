@@ -63,7 +63,7 @@ public class Alerta {
     }
 
     public Calendar getData_cadastro() {
-        return Calendar.getInstance();
+        return data_cadastro;
     }
 
     public void setData_cadastro(Calendar data_cadastro) {
