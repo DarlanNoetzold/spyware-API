@@ -19,23 +19,9 @@
 <br>Link: https://spyware-api.herokuapp.com/swagger-ui/index.html
 
 ---
-## API do HateSpeech:
-* A API:
-<br>Link: https://hate-speech-portuguese.herokuapp.com
-* Repositório no GitHub:
-<br>Link: https://github.com/DarlanNoetzold/HateSpeech-portuguese
-
----
 ## Script do Spyware:
 * Repositório no GitHub:
 <br>Link: https://github.com/DarlanNoetzold/spyware
-
----
-## Remote-Analyser
-* Repositório no GitHub:
-<br>Link: https://github.com/DarlanNoetzold/Remote-Analyser
-* Heroku:
-<br>Link: https://remoteanalyser.herokuapp.com/home
 
 ---
 ⭐️ From [DarlanNoetzold](https://github.com/DarlanNoetzold)
