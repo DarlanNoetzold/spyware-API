@@ -1,6 +1,5 @@
 package tech.noetzold.spyware.controller;
 
-import org.apache.tomcat.util.codec.binary.Base64;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -8,7 +7,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
 import tech.noetzold.spyware.model.Alerta;
 import tech.noetzold.spyware.service.AlertaService;
 import tech.noetzold.spyware.service.ImagemService;
@@ -18,12 +16,11 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.Calendar;
 import java.util.Collection;
 import java.util.List;
-import java.util.Set;
 
 
 @CrossOrigin
 @RestController
-@RequestMapping("/alerta")
+@RequestMapping("/alert")
 public class AlertaController {
 
     @Autowired
@@ -69,7 +66,7 @@ public class AlertaController {
         }
         return new ResponseEntity<Alerta>(alerta, HttpStatus.UNPROCESSABLE_ENTITY);
     }
-    @GetMapping("remover/{id}")
+    @DeleteMapping("remove/{id}")
     public String remover(@PathVariable("id") Long id) {
         alertaService.deleteById(id);
         return "redirect:/home";

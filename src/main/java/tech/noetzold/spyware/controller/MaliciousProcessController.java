@@ -25,9 +25,9 @@ public class MaliciousProcessController {
         return new ResponseEntity<Collection<MaliciousProcess>>(maliciousProcessService.findAll(), HttpStatus.OK);
     }
 
-    @RequestMapping(value = "/get/{nome}", method = RequestMethod.GET)
+    @RequestMapping(value = "/get/{id}", method = RequestMethod.GET)
     @Transactional
-    public ResponseEntity<MaliciousProcess> getMaliciousProcessById(@PathVariable("nome") long id) {
+    public ResponseEntity<MaliciousProcess> getMaliciousProcessById(@PathVariable("id") long id) {
 
         MaliciousProcess maliciousProcess = maliciousProcessService.findById(id).get();
 
@@ -46,7 +46,7 @@ public class MaliciousProcessController {
         return new ResponseEntity<MaliciousProcess>(maliciousProcess, HttpStatus.UNPROCESSABLE_ENTITY);
     }
 
-    @GetMapping("remover/{id}")
+    @DeleteMapping("remove/{id}")
     public String remover(@PathVariable("id") Long id) {
         maliciousProcessService.deleteById(id);
         return "redirect:/home";

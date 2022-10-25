@@ -15,7 +15,7 @@ import java.util.Collection;
 
 @CrossOrigin
 @RestController
-@RequestMapping("/imagem")
+@RequestMapping("/image")
 public class ImagemController {
     @Autowired
     ImagemService imagemService;
@@ -26,9 +26,9 @@ public class ImagemController {
         return new ResponseEntity<Collection<Imagem>>(imagemService.findAll(), HttpStatus.OK);
     }
 
-    @RequestMapping(value = "/get/{nome}", method = RequestMethod.GET)
+    @RequestMapping(value = "/get/{id}", method = RequestMethod.GET)
     @Transactional
-    public ResponseEntity<Imagem> getImagemById(@PathVariable("nome") long id) {
+    public ResponseEntity<Imagem> getImagemById(@PathVariable("id") long id) {
 
         Imagem imagem = imagemService.findById(id).get();
 

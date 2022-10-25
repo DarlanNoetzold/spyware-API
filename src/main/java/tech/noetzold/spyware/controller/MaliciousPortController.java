@@ -25,9 +25,9 @@ public class MaliciousPortController {
         return new ResponseEntity<Collection<MaliciousPort>>(maliciousPortService.findAll(), HttpStatus.OK);
     }
 
-    @RequestMapping(value = "/get/{nome}", method = RequestMethod.GET)
+    @RequestMapping(value = "/get/{id}", method = RequestMethod.GET)
     @Transactional
-    public ResponseEntity<MaliciousPort> getMaliciousPortById(@PathVariable("nome") long id) {
+    public ResponseEntity<MaliciousPort> getMaliciousPortById(@PathVariable("id") long id) {
 
         MaliciousPort maliciousPort = maliciousPortService.findById(id).get();
 
@@ -46,7 +46,7 @@ public class MaliciousPortController {
         return new ResponseEntity<MaliciousPort>(maliciousPort, HttpStatus.UNPROCESSABLE_ENTITY);
     }
 
-    @GetMapping("remover/{id}")
+    @DeleteMapping("remove/{id}")
     public String remover(@PathVariable("id") Long id) {
         maliciousPortService.deleteById(id);
         return "redirect:/home";

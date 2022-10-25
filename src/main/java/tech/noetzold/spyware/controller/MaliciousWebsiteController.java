@@ -25,9 +25,9 @@ public class MaliciousWebsiteController {
         return new ResponseEntity<Collection<MaliciousWebsite>>(maliciousWebsiteService.findAll(), HttpStatus.OK);
     }
 
-    @RequestMapping(value = "/get/{nome}", method = RequestMethod.GET)
+    @RequestMapping(value = "/get/{id}", method = RequestMethod.GET)
     @Transactional
-    public ResponseEntity<MaliciousWebsite> getMaliciousWebsiteById(@PathVariable("nome") long id) {
+    public ResponseEntity<MaliciousWebsite> getMaliciousWebsiteById(@PathVariable("id") long id) {
 
         MaliciousWebsite maliciousWebsite = maliciousWebsiteService.findById(id).get();
 
@@ -46,7 +46,7 @@ public class MaliciousWebsiteController {
         return new ResponseEntity<MaliciousWebsite>(maliciousWebsite, HttpStatus.UNPROCESSABLE_ENTITY);
     }
 
-    @GetMapping("remover/{id}")
+    @DeleteMapping("remove/{id}")
     public String remover(@PathVariable("id") Long id) {
         maliciousWebsiteService.deleteById(id);
         return "redirect:/home";

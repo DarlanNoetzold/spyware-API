@@ -26,9 +26,9 @@ public class BadLanguageController {
         return new ResponseEntity<Collection<BadLanguage>>(badLanguageService.findAll(), HttpStatus.OK);
     }
 
-    @RequestMapping(value = "/get/{nome}", method = RequestMethod.GET)
+    @RequestMapping(value = "/get/{id}", method = RequestMethod.GET)
     @Transactional
-    public ResponseEntity<BadLanguage> getBadLanguageById(@PathVariable("nome") long id) {
+    public ResponseEntity<BadLanguage> getBadLanguageById(@PathVariable("id") long id) {
 
         BadLanguage badLanguage = badLanguageService.findById(id).get();
 
@@ -47,7 +47,7 @@ public class BadLanguageController {
         return new ResponseEntity<BadLanguage>(badLanguage, HttpStatus.UNPROCESSABLE_ENTITY);
     }
 
-    @GetMapping("remover/{id}")
+    @DeleteMapping("remove/{id}")
     public String remover(@PathVariable("id") Long id) {
         badLanguageService.deleteById(id);
         return "redirect:/home";

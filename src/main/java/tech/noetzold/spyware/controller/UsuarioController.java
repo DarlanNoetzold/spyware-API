@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/usuario")
+@RequestMapping("/user")
 public class UsuarioController {
 
     private final UsuarioService repository;
@@ -22,18 +22,18 @@ public class UsuarioController {
         this.encoder = encoder;
     }
 
-    @GetMapping("/listarTodos")
+    @GetMapping("/listAll")
     public ResponseEntity<List<Usuario>> listarTodos() {
         return ResponseEntity.ok(repository.findAll());
     }
 
-    @PostMapping("/salvar")
+    @PostMapping("/save")
     public ResponseEntity<Usuario> salvar(@RequestBody Usuario usuario) {
         usuario.setPassword(encoder.encode(usuario.getPassword()));
         return ResponseEntity.ok(repository.save(usuario));
     }
 
-    @GetMapping("/validarSenha")
+    @GetMapping("/validatePass")
     public ResponseEntity<Boolean> validarSenha(@RequestParam String login,
                                                 @RequestParam String password) {
 
