@@ -30,6 +30,17 @@ public class Alerta {
     @Column(name = "data_cadastro", nullable = false)
     private Calendar data_cadastro;
 
+    public Alerta(Long id, String pcId, Imagem imagem, String processos, Calendar data_cadastro) {
+        this.id = id;
+        this.pcId = pcId;
+        this.imagem = imagem;
+        this.processos = processos;
+        this.data_cadastro = data_cadastro;
+    }
+
+    public Alerta() {
+    }
+
     public Long getId() {
         return id;
     }

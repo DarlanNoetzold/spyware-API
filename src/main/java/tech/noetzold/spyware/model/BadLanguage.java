@@ -16,6 +16,14 @@ public class BadLanguage {
     @NotNull
     private String word;
 
+    public BadLanguage(Long id, String word) {
+        this.id = id;
+        this.word = word;
+    }
+
+    public BadLanguage() {
+    }
+
     public Long getId() {
         return id;
     }

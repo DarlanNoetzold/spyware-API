@@ -32,6 +32,14 @@ public class MaliciousPort {
         this.vulnarableBanners = vulnarableBanners;
     }
 
+    public MaliciousPort(Long id, String vulnarableBanners) {
+        this.id = id;
+        this.vulnarableBanners = vulnarableBanners;
+    }
+
+    public MaliciousPort() {
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;

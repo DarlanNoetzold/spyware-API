@@ -26,6 +26,15 @@ public class Imagem {
     @Type(type="org.hibernate.type.BinaryType")
     private byte[] base64Img;
 
+    public Imagem() {
+    }
+
+    public Imagem(Long id, String productImg, @NotNull byte[] base64Img) {
+        this.id = id;
+        this.productImg = productImg;
+        this.base64Img = base64Img;
+    }
+
     public Long getId() {
         return id;
     }

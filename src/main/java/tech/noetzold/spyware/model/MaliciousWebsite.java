@@ -32,6 +32,14 @@ public class MaliciousWebsite {
         this.url = url;
     }
 
+    public MaliciousWebsite(Long id, String url) {
+        this.id = id;
+        this.url = url;
+    }
+
+    public MaliciousWebsite() {
+    }
+
     @Override
     public int hashCode() {
         final int prime = 31;

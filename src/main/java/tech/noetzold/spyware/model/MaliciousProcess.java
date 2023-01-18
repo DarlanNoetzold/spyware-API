@@ -16,6 +16,14 @@ public class MaliciousProcess {
     @NotNull
     private String nameExe;
 
+    public MaliciousProcess(Long id, String nameExe) {
+        this.id = id;
+        this.nameExe = nameExe;
+    }
+
+    public MaliciousProcess() {
+    }
+
     public Long getId() {
         return id;
     }
