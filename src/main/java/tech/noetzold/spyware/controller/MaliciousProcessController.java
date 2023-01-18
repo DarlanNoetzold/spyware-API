@@ -6,6 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 import tech.noetzold.spyware.model.MaliciousProcess;
+import tech.noetzold.spyware.repository.MaliciousProcessRepository;
 import tech.noetzold.spyware.service.MaliciousProcessService;
 
 import javax.servlet.http.HttpServletRequest;
@@ -22,23 +23,29 @@ public class MaliciousProcessController {
     @RequestMapping(value = "/getAll", method = RequestMethod.GET)
     @Transactional
     public ResponseEntity<Collection<MaliciousProcess>> getAll(HttpServletRequest request, HttpServletResponse response) {
-        return new ResponseEntity<Collection<MaliciousProcess>>(maliciousProcessService.findAll(), HttpStatus.OK);
+        return new ResponseEntity<Collection<MaliciousProcess>>(maliciousProcessService.findAllMaliciousProcess(), HttpStatus.OK);
     }
 
     @RequestMapping(value = "/get/{id}", method = RequestMethod.GET)
     @Transactional
     public ResponseEntity<MaliciousProcess> getMaliciousProcessById(@PathVariable("id") long id) {
+        try {
+            if (id <= 0)
+                return new ResponseEntity<MaliciousProcess>(HttpStatus.BAD_REQUEST);
+            MaliciousProcess maliciousProcess = maliciousProcessService.findMaliciousProcessById(id);
 
-        MaliciousProcess maliciousProcess = maliciousProcessService.findById(id).get();
-
-        return new ResponseEntity<MaliciousProcess>(maliciousProcess, HttpStatus.OK);
+            return new ResponseEntity<MaliciousProcess>(maliciousProcess, HttpStatus.OK);
+        }catch (NullPointerException e){
+            e.printStackTrace();
+            return new ResponseEntity<MaliciousProcess>(HttpStatus.NOT_FOUND);
+        }
     }
 
 
     @RequestMapping(value = "/save", method = RequestMethod.POST)
     public ResponseEntity<MaliciousProcess> save(@RequestBody MaliciousProcess maliciousProcess) {
         try {
-            maliciousProcess = maliciousProcessService.save(maliciousProcess);
+            maliciousProcess = maliciousProcessService.saveMaliciousProcess(maliciousProcess);
             return new ResponseEntity<MaliciousProcess>(maliciousProcess, HttpStatus.CREATED);
         } catch (Exception e) {
             e.printStackTrace();
@@ -48,7 +55,7 @@ public class MaliciousProcessController {
 
     @DeleteMapping("remove/{id}")
     public String remover(@PathVariable("id") Long id) {
-        maliciousProcessService.deleteById(id);
+        maliciousProcessService.deleteProcessById(id);
         return "redirect:/home";
     }
 }
