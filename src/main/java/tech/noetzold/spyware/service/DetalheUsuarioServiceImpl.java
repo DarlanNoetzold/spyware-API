@@ -6,15 +6,16 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Component;
 import tech.noetzold.spyware.data.DetalheUsuarioData;
 import tech.noetzold.spyware.model.Usuario;
+import tech.noetzold.spyware.repository.UsuarioRepository;
 
 import java.util.Optional;
 
 @Component
 public class DetalheUsuarioServiceImpl implements UserDetailsService {
 
-    private final UsuarioService service;
+    private final UsuarioRepository service;
 
-    public DetalheUsuarioServiceImpl(UsuarioService service) {
+    public DetalheUsuarioServiceImpl(UsuarioRepository service) {
         this.service = service;
     }
 
