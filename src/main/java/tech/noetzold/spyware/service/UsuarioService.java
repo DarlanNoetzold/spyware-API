@@ -1,12 +1,28 @@
 package tech.noetzold.spyware.service;
 
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import tech.noetzold.spyware.model.MaliciousWebsite;
 import tech.noetzold.spyware.model.Usuario;
+import tech.noetzold.spyware.repository.UsuarioRepository;
 
+import java.util.List;
 import java.util.Optional;
 
-public interface UsuarioService extends JpaRepository<Usuario, Integer> {
+@Service
+public class UsuarioService {
+    @Autowired
+    private UsuarioRepository userRepository;
 
-    public Optional<Usuario> findByLogin(String login);
+    public List<Usuario> findAllUsuarios(){
+        return userRepository.findAll();
+    }
 
+    public Usuario saveUsuario(Usuario usuario){
+        return userRepository.save(usuario);
+    }
+
+    public Optional<Usuario> validateLogin(String login){
+        return userRepository.findByLogin(login);
+    }
 }
