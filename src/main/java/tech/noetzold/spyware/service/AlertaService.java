@@ -1,6 +1,7 @@
 package tech.noetzold.spyware.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -10,6 +11,7 @@ import tech.noetzold.spyware.repository.AlertaRepository;
 import java.util.List;
 
 @Service
+@Cacheable("alerta")
 public class AlertaService {
 
     @Autowired
