@@ -106,4 +106,15 @@ public class Alerta implements Serializable {
             return false;
         return true;
     }
+
+    @Override
+    public String toString() {
+        return "Alerta{" +
+                "id=" + id +
+                ", pcId='" + pcId + '\'' +
+                ", imagem=" + imagem +
+                ", processos='" + processos + '\'' +
+                ", data_cadastro=" + data_cadastro +
+                '}';
+    }
 }
