@@ -16,7 +16,7 @@ public class RedisConfig {
     RedisCacheManagerBuilderCustomizer redisCacheManagerBuilderCustomizer() {
         return (builder) -> {
             Map<String, RedisCacheConfiguration> configurationMap = new HashMap<>();
-            configurationMap.put("alerta", RedisCacheConfiguration.defaultCacheConfig().entryTtl(Duration.ofMinutes(20)));
+            configurationMap.put("alerta", RedisCacheConfiguration.defaultCacheConfig().entryTtl(Duration.ofSeconds(20)));
             builder.withInitialCacheConfigurations(configurationMap);
         };
     }
