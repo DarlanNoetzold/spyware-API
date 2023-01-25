@@ -8,10 +8,12 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
+import tech.noetzold.spyware.message.RabbitmqConstantes;
 import tech.noetzold.spyware.model.Alerta;
 import tech.noetzold.spyware.repository.AlertaRepository;
 import tech.noetzold.spyware.repository.ImagemRepository;
 import tech.noetzold.spyware.service.AlertaService;
+import tech.noetzold.spyware.service.RabbitmqService;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -30,6 +32,9 @@ public class AlertaController {
 
     @Autowired
     ImagemRepository imagemRepository;
+
+    @Autowired
+    private RabbitmqService rabbitmqService;
 
     @Transactional
     @RequestMapping(method = RequestMethod.GET)
@@ -68,7 +73,7 @@ public class AlertaController {
         try {
             alerta.setImagem(imagemRepository.findById(alerta.getImagem().getId()).get());
             alerta.setData_cadastro(Calendar.getInstance());
-            alerta = alertaSevice.saveAlerta(alerta);
+            this.rabbitmqService.enviaMensagem(RabbitmqConstantes.FILA_ALERTA, alerta);
             return new ResponseEntity<Alerta>(alerta, HttpStatus.CREATED);
         } catch (Exception e) {
             e.printStackTrace();
