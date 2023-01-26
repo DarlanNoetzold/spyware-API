@@ -4,7 +4,10 @@
 * Foi desenvolvido com Spring Boot;
 * O Banco utilizado foi o PostgreSQL;
 * O login e o token JWT foram implementados com Spring Security;
-* A documentação foi construida com OpenAPI e Swagger.
+* A documentação foi construida com OpenAPI e Swagger;
+* Uso de Redis (banco noSQL) para manter dados de cache;
+* Mensageiria construída com RabbitMQ;
+* Uso do docker para configuração e implantação do projeto.
 
 ## Projeto:
 * Projeto de Prova de conceito para o desenvolvimento de malware's para que assim possamos aprender como evitá-los e reconhece-los;
