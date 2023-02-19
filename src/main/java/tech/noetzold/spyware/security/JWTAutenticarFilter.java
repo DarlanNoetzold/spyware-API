@@ -9,7 +9,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import tech.noetzold.spyware.data.DetalheUsuarioData;
-import tech.noetzold.spyware.model.Usuario;
+import tech.noetzold.spyware.model.User;
 import tech.noetzold.spyware.util.TokenApp;
 
 import javax.servlet.FilterChain;
@@ -36,12 +36,12 @@ public class JWTAutenticarFilter extends UsernamePasswordAuthenticationFilter {
     public Authentication attemptAuthentication(HttpServletRequest request,
                                                 HttpServletResponse response) throws AuthenticationException {
         try {
-            Usuario usuario = new ObjectMapper()
-                    .readValue(request.getInputStream(), Usuario.class);
+            User user = new ObjectMapper()
+                    .readValue(request.getInputStream(), User.class);
 
             return authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(
-                    usuario.getLogin(),
-                    usuario.getPassword(),
+                    user.getLogin(),
+                    user.getPassword(),
                     new ArrayList<>()
             ));
 
