@@ -2,7 +2,7 @@ package tech.noetzold.spyware.data;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-import tech.noetzold.spyware.model.Usuario;
+import tech.noetzold.spyware.model.User;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -10,9 +10,9 @@ import java.util.Optional;
 
 public class DetalheUsuarioData implements UserDetails {
 
-    private final Optional<Usuario> usuario;
+    private final Optional<User> usuario;
 
-    public DetalheUsuarioData(Optional<Usuario> usuario) {
+    public DetalheUsuarioData(Optional<User> usuario) {
         this.usuario = usuario;
     }
 
@@ -23,12 +23,12 @@ public class DetalheUsuarioData implements UserDetails {
 
     @Override
     public String getPassword() {
-        return usuario.orElse(new Usuario()).getPassword();
+        return usuario.orElse(new User()).getPassword();
     }
 
     @Override
     public String getUsername() {
-        return usuario.orElse(new Usuario()).getLogin();
+        return usuario.orElse(new User()).getLogin();
     }
 
     @Override
