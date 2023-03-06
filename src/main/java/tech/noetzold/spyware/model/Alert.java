@@ -19,7 +19,6 @@ public class Alert implements Serializable {
     private String pcId;
 
     @NotNull
-    @ManyToOne(cascade=CascadeType.PERSIST)
     private Image image;
 
     @Type(type="text")

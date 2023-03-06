@@ -19,7 +19,7 @@ public class AlertConsumer {
 
     @Transactional
     @RabbitListener(queues = RabbitmqConstantes.FILA_ALERTA)
-    private void cnsumerAlerta(String mensagem) throws JsonProcessingException {
+    private void consumerAlerta(String mensagem) throws JsonProcessingException {
         Alert alert = new ObjectMapper().readValue(mensagem, Alert.class);
         alertService.saveAlerta(alert);
     }
