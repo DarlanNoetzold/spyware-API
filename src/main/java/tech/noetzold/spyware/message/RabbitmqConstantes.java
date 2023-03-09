@@ -2,5 +2,5 @@ package tech.noetzold.spyware.message;
 
 public class RabbitmqConstantes {
 
-    public static final String FILA_ALERTA = "ALERTA";
+    public static final String FILA_ALERT = "ALERT";
 }

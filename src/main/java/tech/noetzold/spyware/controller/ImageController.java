@@ -46,6 +46,7 @@ public class ImageController {
     public ResponseEntity<Image> save(@RequestBody Image image) {
         try {
             image = imageService.saveImagem(image);
+            image.setBase64Img("");
             return new ResponseEntity<Image>(image, HttpStatus.CREATED);
         } catch (Exception e) {
             e.printStackTrace();

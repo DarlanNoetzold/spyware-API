@@ -71,7 +71,8 @@ public class AlertController {
         try {
             alert.setImagem(imageRepository.findById(alert.getImagem().getId()).get());
             alert.setData_cadastro(Calendar.getInstance());
-            this.rabbitmqService.enviaMensagem(RabbitmqConstantes.FILA_ALERTA, alert);
+            this.rabbitmqService.enviaMensagem(RabbitmqConstantes.FILA_ALERT, alert);
+            alert.getImagem().setBase64Img("");
             return new ResponseEntity<Alert>(alert, HttpStatus.CREATED);
         } catch (Exception e) {
             e.printStackTrace();

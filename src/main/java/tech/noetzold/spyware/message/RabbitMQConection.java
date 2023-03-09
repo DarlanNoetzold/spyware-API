@@ -32,7 +32,8 @@ public class RabbitMQConection {
 
     @PostConstruct
     private void adiciona(){
-        Queue filaAlerta = this.fila(RabbitmqConstantes.FILA_ALERTA);
+        Queue filaAlerta = this.fila(RabbitmqConstantes.FILA_ALERT);
+
 
         DirectExchange troca = this.trocaDireta();
 
