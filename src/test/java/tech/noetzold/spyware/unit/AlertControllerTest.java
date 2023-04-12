@@ -61,7 +61,8 @@ public class AlertControllerTest {
         Page<Alert> page = new PageImpl<>(alerts);
         when(alertService.findAll(any(Pageable.class))).thenReturn(page);
 
-        mockMvc.perform(MockMvcRequestBuilders.get("/alert").header("Authorization", "Bearer " + generateToken()))
+        mockMvc.perform(MockMvcRequestBuilders.get("/alert")
+                        .header("Authorization", "Bearer " + generateToken()))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON));
     }
@@ -72,7 +73,8 @@ public class AlertControllerTest {
         alert.setId(1L);
         when(alertService.findAlertaById(1L)).thenReturn(alert);
 
-        mockMvc.perform(MockMvcRequestBuilders.get("/alert/1").header("Authorization", "Bearer " + generateToken()))
+        mockMvc.perform(MockMvcRequestBuilders.get("/alert/1")
+                        .header("Authorization", "Bearer " + generateToken()))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON));
     }
@@ -82,7 +84,8 @@ public class AlertControllerTest {
         List<Alert> alerts = new ArrayList<>();
         when(alertService.findAlertaByPcId("pc1")).thenReturn(alerts);
 
-        mockMvc.perform(MockMvcRequestBuilders.get("/alert/pcId/pc1").header("Authorization", "Bearer " + generateToken()))
+        mockMvc.perform(MockMvcRequestBuilders.get("/alert/pcId/pc1")
+                        .header("Authorization", "Bearer " + generateToken()))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON));
     }
