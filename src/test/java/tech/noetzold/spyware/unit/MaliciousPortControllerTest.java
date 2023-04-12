@@ -45,7 +45,8 @@ public class MaliciousPortControllerTest {
         List<MaliciousPort> ports = Arrays.asList(port1, port2);
         when(maliciousPortService.findAllMaliciousPort()).thenReturn(ports);
 
-        mockMvc.perform(get("/port/getAll").header("Authorization", "Bearer " + generateToken()))
+        mockMvc.perform(get("/port/getAll")
+                        .header("Authorization", "Bearer " + generateToken()))
                 .andExpect(status().isOk());
     }
 
@@ -55,13 +56,15 @@ public class MaliciousPortControllerTest {
         MaliciousPort maliciousPort = new MaliciousPort(portId, "8080");
         when(maliciousPortService.findMaliciousPortById(portId)).thenReturn(maliciousPort);
 
-        mockMvc.perform(get("/port/get/{id}", portId).header("Authorization", "Bearer " + generateToken()))
+        mockMvc.perform(get("/port/get/{id}", portId)
+                        .header("Authorization", "Bearer " + generateToken()))
                 .andExpect(status().isOk());
     }
 
     @Test
     void testGetMaliciousPortByIdBadRequest() throws Exception {
-        mockMvc.perform(get("/port/get/-1").header("Authorization", "Bearer " + generateToken()))
+        mockMvc.perform(get("/port/get/-1")
+                        .header("Authorization", "Bearer " + generateToken()))
                 .andExpect(status().isBadRequest());
     }
 
@@ -71,7 +74,8 @@ public class MaliciousPortControllerTest {
         MaliciousPort savedMaliciousPort = new MaliciousPort(1L, "8080");
         when(maliciousPortService.saveMaliciousPort(maliciousPort)).thenReturn(savedMaliciousPort);
 
-        mockMvc.perform(post("/port/save").header("Authorization", "Bearer " + generateToken())
+        mockMvc.perform(post("/port/save")
+                        .header("Authorization", "Bearer " + generateToken())
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(asJsonString(maliciousPort)))
                 .andExpect(status().isCreated());
