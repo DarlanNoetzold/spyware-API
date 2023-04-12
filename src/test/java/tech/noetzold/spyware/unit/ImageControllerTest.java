@@ -52,7 +52,8 @@ public class ImageControllerTest {
 
         given(imageService.findAllImages()).willReturn(images);
 
-        mockMvc.perform(get("/image/getAll").header("Authorization", "Bearer " + generateToken()))
+        mockMvc.perform(get("/image/getAll")
+                        .header("Authorization", "Bearer " + generateToken()))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON));
     }
@@ -64,7 +65,8 @@ public class ImageControllerTest {
 
         given(imageService.findImagemById(1L)).willReturn(image);
 
-        mockMvc.perform(get("/image/get/1").header("Authorization", "Bearer " + generateToken()))
+        mockMvc.perform(get("/image/get/1")
+                        .header("Authorization", "Bearer " + generateToken()))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON));
     }
@@ -77,7 +79,8 @@ public class ImageControllerTest {
 
         given(imageService.saveImagem(any(Image.class))).willReturn(image);
 
-        mockMvc.perform(post("/image/save").header("Authorization", "Bearer " + generateToken())
+        mockMvc.perform(post("/image/save")
+                        .header("Authorization", "Bearer " + generateToken())
                         .contentType(MediaType.APPLICATION_JSON)
                         .content("{ \"id\": 100, \"productImg\": \"teste\", \"base64Img\": \""+image.getBase64Img()+"\" }"))
                 .andExpect(status().isCreated())
