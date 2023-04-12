@@ -50,7 +50,8 @@ public class BadLanguageControllerTest {
         when(badLanguageService.findAllBadLanguage()).thenReturn(Arrays.asList(badLanguage1, badLanguage2));
 
         mockMvc.perform(get("/badLanguage/getAll")
-                        .contentType(MediaType.APPLICATION_JSON).header("Authorization", "Bearer " + generateToken()))
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .header("Authorization", "Bearer " + generateToken()))
                 .andExpect(status().isOk());
     }
 
@@ -61,7 +62,8 @@ public class BadLanguageControllerTest {
         when(badLanguageService.findBadLanguageById(anyLong())).thenReturn(badLanguage);
 
         mockMvc.perform(get("/badLanguage/get/{id}", 1)
-                        .contentType(MediaType.APPLICATION_JSON).header("Authorization", "Bearer " + generateToken()))
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .header("Authorization", "Bearer " + generateToken()))
                 .andExpect(status().isOk());
     }
 
@@ -74,7 +76,8 @@ public class BadLanguageControllerTest {
         mockMvc.perform(post("/badLanguage/save")
                         .content("{\n" +
                                 "  \"word\": \"word\"\n" +
-                                "}").header("Authorization", "Bearer " + generateToken())
+                                "}")
+                        .header("Authorization", "Bearer " + generateToken())
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk());
     }
