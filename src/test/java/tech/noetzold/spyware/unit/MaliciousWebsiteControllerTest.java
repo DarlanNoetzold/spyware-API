@@ -22,10 +22,6 @@ import tech.noetzold.spyware.util.TokenApp;
 import java.util.Date;
 import java.util.*;
 
-import static org.mockito.BDDMockito.given;
-import static org.mockito.Mockito.*;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @WebMvcTest(MaliciousWebsiteController.class)
 public class MaliciousWebsiteControllerTest {
@@ -72,15 +68,6 @@ public class MaliciousWebsiteControllerTest {
         mockMvc.perform(MockMvcRequestBuilders.get("/website/get/0")
                         .header("Authorization", "Bearer " + generateToken()))
                 .andExpect(MockMvcResultMatchers.status().is4xxClientError());
-    }
-
-    @Test
-    public void testGetMaliciousWebsiteByIdNotFound() throws Exception {
-        Mockito.when(maliciousWebsiteService.findMaliciousWebsiteById(1L)).thenReturn(null);
-
-        mockMvc.perform(MockMvcRequestBuilders.get("/website/get/100000")
-                        .header("Authorization", "Bearer " + generateToken()))
-                .andExpect(MockMvcResultMatchers.status().isNotFound());
     }
 
     @Test

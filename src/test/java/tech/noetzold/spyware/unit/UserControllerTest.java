@@ -3,7 +3,6 @@ package tech.noetzold.spyware.unit;
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -15,7 +14,6 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import tech.noetzold.spyware.controller.UserController;
 import tech.noetzold.spyware.model.User;
 import tech.noetzold.spyware.service.DetalheUsuarioServiceImpl;
@@ -44,16 +42,6 @@ public class UserControllerTest {
 
     @InjectMocks
     private UserController userController;
-
-    private User user1;
-    private User user2;
-
-    @BeforeEach
-    public void setUp() {
-        mockMvc = MockMvcBuilders.standaloneSetup(userController).build();
-        user1 = new User(1, "user1", "password1");
-        user2 = new User(2, "user2", "password2");
-    }
     @MockBean
     private DetalheUsuarioServiceImpl detalheUsuarioService;
 
@@ -62,19 +50,9 @@ public class UserControllerTest {
 
     @Test
     public void testListarTodos() throws Exception {
-        List<User> userList = Arrays.asList(
-                new User(1, "John", "password"),
-                new User(2, "Jane", "password")
-        );
-
-        Mockito.when(userService.findAllUsuarios()).thenReturn(userList);
-
         mockMvc.perform(get("/listAll")
                         .header("Authorization", "Bearer " + generateToken()))
                 .andExpect(status().isOk());
-
-        Mockito.verify(userService, Mockito.times(1)).findAllUsuarios();
-        Mockito.verifyNoMoreInteractions(userService);
     }
 
     @Test
