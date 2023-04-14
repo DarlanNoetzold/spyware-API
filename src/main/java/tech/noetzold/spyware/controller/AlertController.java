@@ -91,14 +91,7 @@ public class AlertController {
     }
 
     @DeleteMapping("remove/{id}")
-    public String remove(@PathVariable("id") Long id) {
-        if (id == null || id <= 0) {
-            return "redirect:/home?error=InvalidAlertId";
-        }
-        Alert alert = alertaSevice.findAlertaById(id);
-        if (alert == null) {
-            return "redirect:/home?error=AlertNotFound";
-        }
+    public String remover(@PathVariable("id") Long id) {
         alertaSevice.deleteAlertaById(id);
         return "redirect:/home";
     }
