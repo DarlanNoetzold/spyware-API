@@ -6,6 +6,7 @@ import tech.noetzold.spyware.model.MaliciousPort;
 import tech.noetzold.spyware.repository.MaliciousPortRepository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class MaliciousPortService {
@@ -27,5 +28,9 @@ public class MaliciousPortService {
 
     public void deleteMaliciousPortById(Long id){
         maliciousPortRepository.deleteById(id);
+    }
+
+    public MaliciousPort findMaliciousPortByVulnarableBanners(String vulnarableBanners) {
+        return maliciousPortRepository.findByVulnarableBanners(vulnarableBanners).orElse(null);
     }
 }
