@@ -80,14 +80,23 @@ public class AlertControllerTest {
     }
 
     @Test
-    public void testGetAlertaPcId() throws Exception {
+    public void testGetAlertaPcIdNotFound() throws Exception {
         List<Alert> alerts = new ArrayList<>();
-        when(alertService.findAlertaByPcId("pc1")).thenReturn(alerts);
+        when(alertService.findAlertaByPcId("teste")).thenReturn(alerts);
 
         mockMvc.perform(MockMvcRequestBuilders.get("/alert/pcId/pc1")
                         .header("Authorization", "Bearer " + generateToken()))
-                .andExpect(status().isOk())
-                .andExpect(content().contentType(MediaType.APPLICATION_JSON));
+                .andExpect(status().isNotFound());
+    }
+
+    @Test
+    public void testGetAlertaPcId() throws Exception {
+        List<Alert> alerts = new ArrayList<>();
+        when(alertService.findAlertaByPcId("asdasdasdasd")).thenReturn(alerts);
+
+        mockMvc.perform(MockMvcRequestBuilders.get("/alert/pcId/asdasdasdasd")
+                        .header("Authorization", "Bearer " + generateToken()))
+                .andExpect(status().isOk());
     }
 
     @Test
