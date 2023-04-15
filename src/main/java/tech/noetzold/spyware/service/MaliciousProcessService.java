@@ -29,4 +29,7 @@ public class MaliciousProcessService {
         maliciousProcessRepository.deleteById(id);
     }
 
+    public MaliciousProcess findMaliciousProcessByNameExe(String nameExe) {
+        return maliciousProcessRepository.findByNameExe(nameExe).orElse(null);
+    }
 }
