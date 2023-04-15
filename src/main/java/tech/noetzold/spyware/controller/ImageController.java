@@ -23,7 +23,11 @@ public class ImageController {
     @RequestMapping(value = "/getAll", method = RequestMethod.GET)
     @Transactional
     public ResponseEntity<Collection<Image>> getAll(HttpServletRequest request, HttpServletResponse response) {
-        return new ResponseEntity<Collection<Image>>(imageService.findAllImages(), HttpStatus.OK);
+        Collection<Image> images = imageService.findAllImages();
+        if(images.isEmpty()) {
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
+        return new ResponseEntity<Collection<Image>>(images, HttpStatus.OK);
     }
 
     @RequestMapping(value = "/get/{id}", method = RequestMethod.GET)
@@ -33,7 +37,9 @@ public class ImageController {
             if(id <= 0)
                 return new ResponseEntity<Image>(HttpStatus.BAD_REQUEST);
             Image image = imageService.findImagemById(id);
-
+            if(image == null) {
+                return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+            }
             return new ResponseEntity<Image>(image, HttpStatus.OK);
         }catch (Exception e){
             e.printStackTrace();
@@ -46,6 +52,9 @@ public class ImageController {
     public ResponseEntity<Image> save(@RequestBody Image image) {
         try {
             image = imageService.saveImagem(image);
+            if(image.getBase64Img() == null) {
+                return new ResponseEntity<>(HttpStatus.UNPROCESSABLE_ENTITY);
+            }
             image.setBase64Img("");
             return new ResponseEntity<Image>(image, HttpStatus.CREATED);
         } catch (Exception e) {
