@@ -23,13 +23,10 @@ public class BadLanguageController {
 
     @Transactional
     @RequestMapping(value = "/getAll", method = RequestMethod.GET)
-    public ResponseEntity<Collection<BadLanguage>> getAll(HttpServletRequest request, HttpServletResponse response, Pageable pageable) {
-        if (pageable == null) {
-            return new ResponseEntity<Collection<BadLanguage>>(HttpStatus.BAD_REQUEST);
-        }
+    public ResponseEntity<Collection<BadLanguage>> getAll(HttpServletRequest request, HttpServletResponse response) {
         Collection<BadLanguage> badLanguages = badLanguageService.findAllBadLanguage();
         if (badLanguages.isEmpty()) {
-            return new ResponseEntity<Collection<BadLanguage>>(HttpStatus.NOT_FOUND);
+            return new ResponseEntity<Collection<BadLanguage>>(HttpStatus.NO_CONTENT);
         }
         return new ResponseEntity<Collection<BadLanguage>>(badLanguages, HttpStatus.OK);
     }
