@@ -23,35 +23,46 @@ public class MaliciousWebsiteController {
     @RequestMapping(value = "/getAll", method = RequestMethod.GET)
     @Transactional
     public ResponseEntity<Collection<MaliciousWebsite>> getAll(HttpServletRequest request, HttpServletResponse response) {
-        return new ResponseEntity<Collection<MaliciousWebsite>>(maliciousWebsiteService.findAllMaliciousWebsite(), HttpStatus.OK);
+        Collection<MaliciousWebsite> maliciousWebsites = maliciousWebsiteService.findAllMaliciousWebsite();
+        if (maliciousWebsites.isEmpty()) {
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+        }
+        return new ResponseEntity<>(maliciousWebsites, HttpStatus.OK);
     }
 
     @RequestMapping(value = "/get/{id}", method = RequestMethod.GET)
     @Transactional
     public ResponseEntity<MaliciousWebsite> getMaliciousWebsiteById(@PathVariable("id") long id) {
-        try{
-            if(id <= 0)
-                return new ResponseEntity<MaliciousWebsite>(HttpStatus.BAD_REQUEST);
-
-            MaliciousWebsite maliciousWebsite = maliciousWebsiteService.findMaliciousWebsiteById(id);
-
-            return new ResponseEntity<MaliciousWebsite>(maliciousWebsite, HttpStatus.OK);
-        }catch (Exception e){
-            e.printStackTrace();
-            return new ResponseEntity<MaliciousWebsite>(HttpStatus.NOT_FOUND);
+        if (id <= 0) {
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
+        MaliciousWebsite maliciousWebsite = maliciousWebsiteService.findMaliciousWebsiteById(id);
+        if (maliciousWebsite == null) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+        return new ResponseEntity<>(maliciousWebsite, HttpStatus.OK);
     }
 
 
     @RequestMapping(value = "/save", method = RequestMethod.POST)
     public ResponseEntity<MaliciousWebsite> save(@RequestBody MaliciousWebsite maliciousWebsite) {
+        if (maliciousWebsite == null) {
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
+
+        MaliciousWebsite existingMaliciousWebsite = maliciousWebsiteService.findMaliciousWebsiteByUrl(maliciousWebsite.getUrl());
+
+        if(existingMaliciousWebsite != null){
+            return new ResponseEntity<>(existingMaliciousWebsite, HttpStatus.CREATED);
+        }
+
         try {
             maliciousWebsite = maliciousWebsiteService.saveMaliciousWebsite(maliciousWebsite);
-            return new ResponseEntity<MaliciousWebsite>(maliciousWebsite, HttpStatus.CREATED);
+            return new ResponseEntity<>(maliciousWebsite, HttpStatus.CREATED);
         } catch (Exception e) {
             e.printStackTrace();
+            return new ResponseEntity<>(HttpStatus.UNPROCESSABLE_ENTITY);
         }
-        return new ResponseEntity<MaliciousWebsite>(maliciousWebsite, HttpStatus.UNPROCESSABLE_ENTITY);
     }
 
     @DeleteMapping("remove/{id}")
