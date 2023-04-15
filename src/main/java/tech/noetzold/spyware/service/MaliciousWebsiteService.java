@@ -28,4 +28,8 @@ public class MaliciousWebsiteService {
     public void deleteWebsiteById(Long id){
         maliciousWebsiteRepository.deleteById(id);
     }
+
+    public MaliciousWebsite findMaliciousWebsiteByUrl(String url) {
+        return maliciousWebsiteRepository.findByUrl(url).orElse(null);
+    }
 }
