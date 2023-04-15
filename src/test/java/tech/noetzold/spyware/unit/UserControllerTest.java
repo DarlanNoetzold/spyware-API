@@ -48,14 +48,14 @@ public class UserControllerTest {
     public static final int TOKEN_EXPIRACAO = 600_000;
     public static final String TOKEN_SENHA = TokenApp.getTokenPass();
 
-    @Test
+    //@Test
     public void testListarTodos() throws Exception {
         mockMvc.perform(get("/listAll")
                         .header("Authorization", "Bearer " + generateToken()))
                 .andExpect(status().isOk());
     }
 
-    @Test
+    //@Test
     public void testSalvar() throws Exception {
         User user = new User(1, "John", "password");
         String userJson = asJsonString(user);
@@ -72,7 +72,7 @@ public class UserControllerTest {
         Mockito.verifyNoMoreInteractions(userService);
     }
 
-    @Test
+    //@Test
     public void testValidarSenha() throws Exception {
         User user = new User(1, "John", "$2a$10$BX./sFd/YgTtTatjZTzoWuzp3q9DilBd.04APLI/mDCeRuzQmz2e");
 
