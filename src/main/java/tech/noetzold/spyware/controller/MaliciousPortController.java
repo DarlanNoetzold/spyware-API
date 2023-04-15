@@ -51,7 +51,7 @@ public class MaliciousPortController {
             return new ResponseEntity<MaliciousPort>(HttpStatus.BAD_REQUEST);
         }
 
-        MaliciousPort existingMaliciousPort =  maliciousPortService.findMaliciousPortByVulnarableBanners(maliciousPort.getVulnarableBanners());
+        MaliciousPort existingMaliciousPort = maliciousPortService.findMaliciousPortByVulnarableBanners(maliciousPort.getVulnarableBanners());
 
         if(existingMaliciousPort != null){
             return new ResponseEntity<MaliciousPort>(existingMaliciousPort, HttpStatus.CREATED);
