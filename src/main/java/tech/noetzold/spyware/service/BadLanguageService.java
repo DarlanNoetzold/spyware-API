@@ -19,12 +19,7 @@ public class BadLanguageService {
     }
 
     public BadLanguage findBadLanguageById(Long id){
-        Optional<BadLanguage> optionalBadLanguage = badLanguageRepository.findById(id);
-        if(optionalBadLanguage.isPresent()){
-            return badLanguageRepository.findById(id).get();
-        }else{
-            return null;
-        }
+        return badLanguageRepository.findById(id).orElse(null);
     }
 
     public BadLanguage saveBadLanguage(BadLanguage badLanguage){
@@ -36,11 +31,6 @@ public class BadLanguageService {
     }
 
     public BadLanguage findBadLanguageByWord(String word) {
-        Optional<BadLanguage> optionalBadLanguage = badLanguageRepository.findByWord(word);
-        if(optionalBadLanguage.isPresent()){
-            return badLanguageRepository.findByWord(word).get();
-        }else{
-            return null;
-        }
+        return badLanguageRepository.findByWord(word).orElse(null);
     }
 }
