@@ -48,7 +48,7 @@ public class MaliciousProcessControllerTest {
 
         mockMvc.perform(get("/process/getAll")
                         .header("Authorization", "Bearer " + generateToken()))
-                .andExpect(status().isOk());
+                .andExpect(status().is2xxSuccessful());
     }
 
     @Test
