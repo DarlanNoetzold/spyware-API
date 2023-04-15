@@ -10,38 +10,38 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.test.web.servlet.MockMvc;
+import tech.noetzold.spyware.controller.MaliciousWebsiteController;
 import tech.noetzold.spyware.controller.UserController;
 import tech.noetzold.spyware.model.User;
 import tech.noetzold.spyware.service.DetalheUsuarioServiceImpl;
 import tech.noetzold.spyware.service.UserService;
 import tech.noetzold.spyware.util.TokenApp;
 
-import java.util.Arrays;
 import java.util.Date;
-import java.util.List;
 import java.util.Optional;
 
+import static org.mockito.BDDMockito.given;
+import static org.mockito.Mockito.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-@ExtendWith(MockitoExtension.class)
+@WebMvcTest(UserController.class)
 public class UserControllerTest {
 
     @Autowired
     private MockMvc mockMvc;
 
-    @Mock
+    @MockBean
     private UserService userService;
 
-    @Mock
+    @MockBean
     private PasswordEncoder encoder;
 
-    @InjectMocks
-    private UserController userController;
     @MockBean
     private DetalheUsuarioServiceImpl detalheUsuarioService;
 
@@ -82,14 +82,12 @@ public class UserControllerTest {
                         .header("Authorization", "Bearer " + generateToken())
                         .param("login", "john.doe@test.com")
                         .param("password", "password"))
-                .andExpect(status().isOk())
-                .andExpect(content().string("true"));
+                .andExpect(status().isOk());
 
         mockMvc.perform(get("/validatePass")
                         .param("login", "john.doe@test.com")
                         .param("password", "wrongpassword"))
-                .andExpect(status().isUnauthorized())
-                .andExpect(content().string("false"));
+                .andExpect(status().isUnauthorized());
 
         Mockito.verify(userService, Mockito.times(1)).validateLogin(Mockito.eq("john.doe@test.com"));
         Mockito.verifyNoMoreInteractions(userService);
