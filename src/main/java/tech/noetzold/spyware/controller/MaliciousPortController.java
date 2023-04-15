@@ -12,6 +12,7 @@ import tech.noetzold.spyware.service.MaliciousPortService;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.Collection;
+import java.util.Optional;
 
 @CrossOrigin
 @RestController
@@ -23,28 +24,39 @@ public class MaliciousPortController {
     @RequestMapping(value = "/getAll", method = RequestMethod.GET)
     @Transactional
     public ResponseEntity<Collection<MaliciousPort>> getAll(HttpServletRequest request, HttpServletResponse response) {
-        return new ResponseEntity<Collection<MaliciousPort>>(maliciousPortService.findAllMaliciousPort(), HttpStatus.OK);
+        Collection<MaliciousPort> maliciousPorts = maliciousPortService.findAllMaliciousPort();
+        if (maliciousPorts.isEmpty()) {
+            return new ResponseEntity<Collection<MaliciousPort>>(HttpStatus.NO_CONTENT);
+        }
+        return new ResponseEntity<Collection<MaliciousPort>>(maliciousPorts, HttpStatus.OK);
     }
 
     @RequestMapping(value = "/get/{id}", method = RequestMethod.GET)
     @Transactional
     public ResponseEntity<MaliciousPort> getMaliciousPortById(@PathVariable("id") long id) {
-        try{
-            if(id <= 0)
-                return new ResponseEntity<MaliciousPort>(HttpStatus.BAD_REQUEST);
-
-            MaliciousPort maliciousPort = maliciousPortService.findMaliciousPortById(id);
-
-            return new ResponseEntity<MaliciousPort>(maliciousPort, HttpStatus.OK);
-        }catch (Exception e){
-            e.printStackTrace();
+        if (id <= 0) {
+            return new ResponseEntity<MaliciousPort>(HttpStatus.BAD_REQUEST);
+        }
+        MaliciousPort maliciousPort = maliciousPortService.findMaliciousPortById(id);
+        if (maliciousPort == null) {
             return new ResponseEntity<MaliciousPort>(HttpStatus.NOT_FOUND);
         }
+        return new ResponseEntity<MaliciousPort>(maliciousPort, HttpStatus.OK);
     }
 
 
     @RequestMapping(value = "/save", method = RequestMethod.POST)
     public ResponseEntity<MaliciousPort> save(@RequestBody MaliciousPort maliciousPort) {
+        if (maliciousPort == null || maliciousPort.getVulnarableBanners() == null) {
+            return new ResponseEntity<MaliciousPort>(HttpStatus.BAD_REQUEST);
+        }
+
+        MaliciousPort existingMaliciousPort =  maliciousPortService.findMaliciousPortByVulnarableBanners(maliciousPort.getVulnarableBanners());
+
+        if(existingMaliciousPort != null){
+            return new ResponseEntity<MaliciousPort>(existingMaliciousPort, HttpStatus.CREATED);
+        }
+
         try {
             maliciousPort = maliciousPortService.saveMaliciousPort(maliciousPort);
             return new ResponseEntity<MaliciousPort>(maliciousPort, HttpStatus.CREATED);
