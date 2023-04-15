@@ -49,9 +49,6 @@ public class BadLanguageController {
         if (badLanguage == null) {
             return new ResponseEntity<BadLanguage>(HttpStatus.BAD_REQUEST);
         }
-        if (badLanguageService.findBadLanguageById(badLanguage.getId()) != null) {
-            return new ResponseEntity<BadLanguage>(HttpStatus.CONFLICT);
-        }
 
         BadLanguage existingBadLanguage = badLanguageService.findBadLanguageByWord(badLanguage.getWord());
 
