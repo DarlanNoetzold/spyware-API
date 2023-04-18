@@ -76,7 +76,7 @@ public class AlertController {
     @RequestMapping(value = "/save", method = RequestMethod.POST)
     public ResponseEntity<Alert> save(@RequestBody Alert alert, HttpServletRequest request, HttpServletResponse response) {
         if (alert == null || alert.getImagem() == null ||
-                alert.getImagem().getId() == null || alert.getData_cadastro() == null) {
+                alert.getImagem().getId() == null) {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
         Optional<Image> optionalImage = imageRepository.findById(alert.getImagem().getId());
