@@ -11,8 +11,8 @@ import java.util.Calendar;
 @Entity
 public class Alert implements Serializable {
     @Id
-    @GeneratedValue(generator = "increment")
-    @GenericGenerator(name = "increment", strategy = "increment")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequence")
+    @SequenceGenerator(name = "sequence", sequenceName = "sequence", allocationSize = 50)
     private Long id;
 
     @NotNull
