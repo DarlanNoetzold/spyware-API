@@ -136,6 +136,8 @@
 							<artifactId>lombok</artifactId>
 						</exclude>
 					</excludes>
+					<finalName>springStartupApp</finalName>
+					<mainClass>com.baeldung.springStart.SpringStartApplication</mainClass>
 				</configuration>
 			</plugin>
 		</plugins>
