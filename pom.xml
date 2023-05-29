@@ -136,8 +136,8 @@
 							<artifactId>lombok</artifactId>
 						</exclude>
 					</excludes>
-					<finalName>springStartupApp</finalName>
-					<mainClass>com.baeldung.springStart.SpringStartApplication</mainClass>
+					<finalName>SpywareApplication</finalName>
+					<mainClass>tech.noetzold.spyware.SpywareApplication</mainClass>
 				</configuration>
 			</plugin>
 		</plugins>
