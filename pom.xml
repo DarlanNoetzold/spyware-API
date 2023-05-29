@@ -137,7 +137,7 @@
 						</exclude>
 					</excludes>
 					<finalName>springStartupApp</finalName>
-					<mainClass>com.baeldung.springStart.SpringStartApplication</mainClass>
+					<mainClass>tech.noetzold.SpywareApplication</mainClass>
 				</configuration>
 			</plugin>
 		</plugins>
