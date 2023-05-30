@@ -15,7 +15,7 @@ import java.util.Collection;
 
 @CrossOrigin
 @RestController
-@RequestMapping("/badLanguage")
+@RequestMapping("/language")
 public class BadLanguageController {
 
     @Autowired
