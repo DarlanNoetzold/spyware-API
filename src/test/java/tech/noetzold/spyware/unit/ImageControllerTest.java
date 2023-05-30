@@ -4,7 +4,6 @@ package tech.noetzold.spyware.unit;
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.apache.tomcat.util.codec.binary.Base64;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
@@ -21,6 +20,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 
 import java.util.Arrays;
+import java.util.Base64;
 import java.util.Date;
 import java.util.List;
 import org.junit.jupiter.api.Test;
@@ -75,7 +75,7 @@ public class ImageControllerTest {
     public void testSaveImage() throws Exception {
         Image image = new Image();
         image.setId(1L);
-        image.setBase64Img(Base64.encodeBase64String("base64imagestring".getBytes()));
+        image.setBase64Img(Base64.getEncoder().encodeToString("base64imagestring".getBytes()));
 
         given(imageService.saveImagem(any(Image.class))).willReturn(image);
 
