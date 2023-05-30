@@ -22,12 +22,6 @@ public class RabbitmqConfig {
         factory.setAcknowledgeMode(AcknowledgeMode.AUTO);
 
         factory.setPrefetchCount(4);
-        //factory.setGlobalQos(true);
-
-        // Utilizando implementação da ErrorHandler
-        // factory.setErrorHandler(new TratamentoErroHandler());
-
-        // Utilizando implementação da FatalStrategy
         factory.setErrorHandler(errorHandler());
 
         return factory;
