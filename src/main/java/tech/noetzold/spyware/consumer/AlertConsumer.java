@@ -10,7 +10,6 @@ import tech.noetzold.spyware.model.Alert;
 import tech.noetzold.spyware.service.AlertService;
 
 import javax.transaction.Transactional;
-
 @Component
 public class AlertConsumer {
 
