@@ -7,7 +7,7 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.io.UnsupportedEncodingException;
-import java.util.Base64;
+import org.apache.tomcat.util.codec.binary.Base64;
 
 @Entity
 public class Image implements Serializable {
@@ -56,8 +56,8 @@ public class Image implements Serializable {
     }
 
     public void setBase64Img(String base64Img) {
-        this.base64Img = Base64.getDecoder().decode(base64Img);
-    }
+        this.base64Img = Base64.decodeBase64(base64Img);
+   }
 
     @Override
     public int hashCode() {
