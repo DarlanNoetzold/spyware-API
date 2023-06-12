@@ -28,7 +28,7 @@ import java.util.Optional;
 public class AlertController {
 
     @Autowired
-    AlertService alertaSevice;
+    AlertService alertSevice;
 
     @Autowired
     ImageRepository imageRepository;
@@ -42,17 +42,17 @@ public class AlertController {
         if (pageable == null || pageable.getPageNumber() < 0 || pageable.getPageSize() <= 0) {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
-        Page<Alert> alerts = alertaSevice.findAll(pageable);
+        Page<Alert> alerts = alertSevice.findAll(pageable);
         return new ResponseEntity<>(alerts, HttpStatus.OK);
     }
 
     @Transactional
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    public ResponseEntity<Alert> getAlertaId(@PathVariable("id") long id) {
+    public ResponseEntity<Alert> getAlertId(@PathVariable("id") long id) {
         if (id <= 0) {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
-        Alert alert = alertaSevice.findAlertaById(id);
+        Alert alert = alertSevice.findAlertaById(id);
         if (alert == null) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
@@ -61,11 +61,11 @@ public class AlertController {
 
     @Transactional
     @RequestMapping(value = "/pcId/{pcId}", method = RequestMethod.GET)
-    public ResponseEntity<Collection<Alert>> getAlertaPcId(@PathVariable("pcId") String pcId) {
+    public ResponseEntity<Collection<Alert>> getAlertPcId(@PathVariable("pcId") String pcId) {
         if (pcId == null || pcId.isEmpty()) {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
-        List<Alert> alerts = alertaSevice.findAlertaByPcId(pcId);
+        List<Alert> alerts = alertSevice.findAlertaByPcId(pcId);
         if (alerts == null || alerts.isEmpty()) {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
@@ -92,7 +92,7 @@ public class AlertController {
 
     @DeleteMapping("remove/{id}")
     public String remover(@PathVariable("id") Long id) {
-        alertaSevice.deleteAlertaById(id);
+        alertSevice.deleteAlertaById(id);
         return "redirect:/home";
     }
 
