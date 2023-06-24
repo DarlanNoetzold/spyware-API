@@ -81,7 +81,7 @@ public class ImageControllerTest {
         mockMvc.perform(post("/image/save")
                         .header("Authorization", "Bearer " + generateToken())
                         .contentType(MediaType.APPLICATION_JSON)
-                        .content("{ \"productImg\": \"teste\", \"base64Img\": \" \" }"))
+                        .content("{ \"productImg\": \"teste\", \"base64Img\": \"base64Img\" }"))
                 .andExpect(status().isCreated())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON));
     }
