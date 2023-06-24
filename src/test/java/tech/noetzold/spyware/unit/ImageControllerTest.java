@@ -82,7 +82,7 @@ public class ImageControllerTest {
                         .header("Authorization", "Bearer " + generateToken())
                         .contentType(MediaType.APPLICATION_JSON)
                         .content("{ \"productImg\": \"teste\", \"base64Img\": \"\"biVBORw0KGgoAAAANSUhEUgAADwAAAAhwCAIAAAAf3FwlAAEAAElEQVR4nOzdfVxU173o/zWAglt0BBwUErkJggg=\"\" }"))
-                .andExpect(status().isCreated())
+                .andExpect(status().is4xxClientError())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON));
     }
 
