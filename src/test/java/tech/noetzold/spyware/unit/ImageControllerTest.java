@@ -81,7 +81,7 @@ public class ImageControllerTest {
         mockMvc.perform(post("/image/save")
                         .header("Authorization", "Bearer " + generateToken())
                         .contentType(MediaType.APPLICATION_JSON)
-                        .content("{ \"productImg\": \"teste\", \"base64Img\": \"biVBORw0KGgoAAAANSUhEUgAADwAAAAhwCAIAAAAf3FwlAAEAAElEQVR4nOzdfVxU173o/zWAglt0BBwUErkJggg=\" }"))
+                        .content("{ \"productImg\": \"teste\", \"base64Img\": \"iVBORw0KGgoAAAANSUhEUgAADwAAAAhwCAIAAAAf3FwlAAEAAElEQVR4nOzdfVxU173o/zWAglt0BBwUErkJggg=\" }"))
                 .andExpect(status().is4xxClientError())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON));
     }
