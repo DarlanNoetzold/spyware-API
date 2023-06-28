@@ -1,5 +1,7 @@
 package tech.noetzold.spyware.controller;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -20,6 +22,8 @@ import java.util.Optional;
 public class MaliciousPortController {
     @Autowired
     MaliciousPortService maliciousPortService;
+
+    private static final Logger logger = LogManager.getLogger(MaliciousPortController.class);
 
     @RequestMapping(value = "/getAll", method = RequestMethod.GET)
     @Transactional
@@ -59,6 +63,7 @@ public class MaliciousPortController {
 
         try {
             maliciousPort = maliciousPortService.saveMaliciousPort(maliciousPort);
+            logger.info("Create MaliciousPort: " + maliciousPort.getVulnarableBanners());
             return new ResponseEntity<MaliciousPort>(maliciousPort, HttpStatus.CREATED);
         } catch (Exception e) {
             e.printStackTrace();
@@ -68,6 +73,7 @@ public class MaliciousPortController {
 
     @DeleteMapping("remove/{id}")
     public String remover(@PathVariable("id") Long id) {
+        logger.info("Remove MaliciousPort: " + id);
         maliciousPortService.deleteMaliciousPortById(id);
         return "redirect:/home";
     }
