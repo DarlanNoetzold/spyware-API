@@ -1,0 +1,18 @@
+<configuration>
+    <property name="LOG_DIR" value="logs/api-sb.log"/>
+    <appender name="FILE-ROLLING" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOG_DIR}</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>logs/archived/api-sb.%d{yyyy-MM-dd}.%i.log.gz</fileNamePattern>
+            <maxFileSize>5MB</maxFileSize>
+            <totalSizeCap>1GB</totalSizeCap>
+            <maxHistory>60</maxHistory>
+        </rollingPolicy>
+    <encoder>
+        <pattern>%d %p %c{1.} [%t] %m%n</pattern>
+    </encoder>
+    </appender>
+    <root level="info">
+        <appender-ref ref="FILE-ROLLING"/>
+    </root>
+</configuration>
