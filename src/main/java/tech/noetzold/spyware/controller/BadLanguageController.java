@@ -1,5 +1,7 @@
 package tech.noetzold.spyware.controller;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -20,6 +22,8 @@ public class BadLanguageController {
 
     @Autowired
     BadLanguageService badLanguageService;
+
+    private static final Logger logger = LogManager.getLogger(BadLanguageController.class);
 
     @Transactional
     @RequestMapping(value = "/getAll", method = RequestMethod.GET)
@@ -57,12 +61,14 @@ public class BadLanguageController {
         }
 
         badLanguage = badLanguageService.saveBadLanguage(badLanguage);
+        logger.info("Create badLanguage: " +badLanguage.getWord());
         return new ResponseEntity<BadLanguage>(badLanguage, HttpStatus.CREATED);
     }
 
     @DeleteMapping("remove/{id}")
     public String remover(@PathVariable("id") Long id) {
         badLanguageService.deleteBadLanguage(id);
+        logger.info("Remove badLanguage: " + id);
         return "redirect:/home";
     }
 }
