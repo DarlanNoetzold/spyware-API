@@ -1,14 +1,13 @@
 package tech.noetzold.spyware.controller;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 import tech.noetzold.spyware.model.MaliciousPort;
-import tech.noetzold.spyware.repository.MaliciousPortRepository;
 import tech.noetzold.spyware.service.MaliciousPortService;
 
 import javax.servlet.http.HttpServletRequest;
@@ -23,7 +22,7 @@ public class MaliciousPortController {
     @Autowired
     MaliciousPortService maliciousPortService;
 
-    private static final Logger logger = LogManager.getLogger(MaliciousPortController.class);
+    private static final Logger logger = LoggerFactory.getLogger(MaliciousPortController.class);
 
     @RequestMapping(value = "/getAll", method = RequestMethod.GET)
     @Transactional
