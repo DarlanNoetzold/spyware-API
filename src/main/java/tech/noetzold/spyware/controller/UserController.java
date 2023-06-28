@@ -1,5 +1,7 @@
 package tech.noetzold.spyware.controller;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -17,6 +19,8 @@ public class UserController {
     private final UserService userService;
     private final PasswordEncoder encoder;
 
+    private static final Logger logger = LogManager.getLogger(UserController.class);
+
     public UserController(UserService userService, PasswordEncoder encoder) {
         this.userService = userService;
         this.encoder = encoder;
@@ -30,6 +34,7 @@ public class UserController {
     @PostMapping("/save")
     public ResponseEntity<User> salvar(@RequestBody User user) {
         user.setPassword(encoder.encode(user.getPassword()));
+        logger.info("Create User " + user.getLogin());
         return ResponseEntity.ok(userService.saveUsuario(user));
     }
 
