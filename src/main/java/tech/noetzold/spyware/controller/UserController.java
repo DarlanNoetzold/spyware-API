@@ -1,7 +1,7 @@
 package tech.noetzold.spyware.controller;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -19,7 +19,7 @@ public class UserController {
     private final UserService userService;
     private final PasswordEncoder encoder;
 
-    private static final Logger logger = LogManager.getLogger(UserController.class);
+    private static final Logger logger = LoggerFactory.getLogger(UserController.class);
 
     public UserController(UserService userService, PasswordEncoder encoder) {
         this.userService = userService;
