@@ -1,5 +1,7 @@
 package tech.noetzold.spyware.controller;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,6 +21,8 @@ import java.util.Collection;
 public class MaliciousWebsiteController {
     @Autowired
     MaliciousWebsiteService maliciousWebsiteService;
+
+    private static final Logger logger = LogManager.getLogger(MaliciousWebsiteController.class);
 
     @RequestMapping(value = "/getAll", method = RequestMethod.GET)
     @Transactional
@@ -58,6 +62,7 @@ public class MaliciousWebsiteController {
 
         try {
             maliciousWebsite = maliciousWebsiteService.saveMaliciousWebsite(maliciousWebsite);
+            logger.info("Create MaliciousWebsite: " + maliciousWebsite.getUrl());
             return new ResponseEntity<>(maliciousWebsite, HttpStatus.CREATED);
         } catch (Exception e) {
             e.printStackTrace();
@@ -68,6 +73,7 @@ public class MaliciousWebsiteController {
     @DeleteMapping("remove/{id}")
     public String remover(@PathVariable("id") Long id) {
         maliciousWebsiteService.deleteWebsiteById(id);
+        logger.info("Remove MaliciousWebsite: " + id);
         return "redirect:/home";
     }
 }
