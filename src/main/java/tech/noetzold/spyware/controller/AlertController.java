@@ -1,5 +1,7 @@
 package tech.noetzold.spyware.controller;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -35,6 +37,8 @@ public class AlertController {
 
     @Autowired
     private RabbitmqService rabbitmqService;
+
+    private static final Logger logger = LogManager.getLogger(AlertController.class);
 
     @Transactional
     @RequestMapping(method = RequestMethod.GET)
@@ -86,13 +90,17 @@ public class AlertController {
         alert.setImagem(optionalImage.get());
         alert.setData_cadastro(Calendar.getInstance());
         this.rabbitmqService.enviaMensagem(RabbitmqConstantes.FILA_ALERT, alert);
+        logger.info("Create Alert "+alert.getId()+" for user "+ alert.getPcId() + " generate by " + alert.getImagem().getProductImg());
+
         alert.getImagem().setBase64Img("");
+
         return new ResponseEntity<>(alert, HttpStatus.CREATED);
     }
 
     @DeleteMapping("remove/{id}")
     public String remover(@PathVariable("id") Long id) {
         alertSevice.deleteAlertaById(id);
+        logger.info("Remove alert: "+id);
         return "redirect:/home";
     }
 
