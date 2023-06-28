@@ -1,6 +1,8 @@
 package tech.noetzold.spyware.controller;
 
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,6 +21,8 @@ import java.util.Collection;
 public class ImageController {
     @Autowired
     ImageService imageService;
+
+    private static final Logger logger = LogManager.getLogger(ImageController.class);
 
     @RequestMapping(value = "/getAll", method = RequestMethod.GET)
     @Transactional
@@ -55,6 +59,7 @@ public class ImageController {
             if(image.getBase64Img() == null) {
                 return new ResponseEntity<>(HttpStatus.UNPROCESSABLE_ENTITY);
             }
+            logger.info("Create " + image.getId());
             image.setBase64Img("");
             return new ResponseEntity<Image>(image, HttpStatus.CREATED);
         } catch (Exception e) {
