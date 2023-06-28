@@ -1,7 +1,7 @@
 package tech.noetzold.spyware.controller;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -22,7 +22,7 @@ public class MaliciousWebsiteController {
     @Autowired
     MaliciousWebsiteService maliciousWebsiteService;
 
-    private static final Logger logger = LogManager.getLogger(MaliciousWebsiteController.class);
+    private static final Logger logger = LoggerFactory.getLogger(MaliciousWebsiteController.class);
 
     @RequestMapping(value = "/getAll", method = RequestMethod.GET)
     @Transactional
