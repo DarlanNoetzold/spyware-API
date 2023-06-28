@@ -1,5 +1,7 @@
 package tech.noetzold.spyware.controller;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,6 +20,8 @@ import java.util.Collection;
 public class MaliciousProcessController {
     @Autowired
     MaliciousProcessService maliciousProcessService;
+
+    private static final Logger logger = LogManager.getLogger(MaliciousProcessController.class);
 
     @RequestMapping(value = "/getAll", method = RequestMethod.GET)
     @Transactional
@@ -56,12 +60,14 @@ public class MaliciousProcessController {
         }
 
         maliciousProcess = maliciousProcessService.saveMaliciousProcess(maliciousProcess);
+        logger.info("Create MaliciousProcess: " + maliciousProcess.getNameExe());
         return new ResponseEntity<MaliciousProcess>(maliciousProcess, HttpStatus.CREATED);
     }
 
     @DeleteMapping("remove/{id}")
     public String remover(@PathVariable("id") Long id) {
         maliciousProcessService.deleteProcessById(id);
+        logger.info("Remove MaliciousProcess: " + id);
         return "redirect:/home";
     }
 }
