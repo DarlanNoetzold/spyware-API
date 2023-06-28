@@ -1,13 +1,12 @@
 package tech.noetzold.spyware.controller;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.data.domain.Pageable;
 import tech.noetzold.spyware.model.BadLanguage;
 import tech.noetzold.spyware.service.BadLanguageService;
 
@@ -23,7 +22,7 @@ public class BadLanguageController {
     @Autowired
     BadLanguageService badLanguageService;
 
-    private static final Logger logger = LogManager.getLogger(BadLanguageController.class);
+    private static final Logger logger = LoggerFactory.getLogger(BadLanguageController.class);
 
     @Transactional
     @RequestMapping(value = "/getAll", method = RequestMethod.GET)
