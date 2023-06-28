@@ -19,16 +19,16 @@
 * Os dados são salvos em um banco PostgreSql são consumidos por filas gerenciadas pelo serviço de mensageiria RabbitMQ de maneira escalável.
 
 
-## Como Utilizar:
+## Como utilizar:
 * A aplicação completa contendo todos os microserviços configurados pode ser obtida no [DockerHub](https://hub.docker.com/repository/docker/darlannoetzold/tcc-spyware/general).
 * Para executá-lo de maneira mais fácil basta excutar os seguintes comandos:
 ```
-docker container run -it -p 8091:8091 -p 8090:8090 -p 5000:5000 --name=app -d darlannoetzold/tcc-spyware:2.3
+docker container run --platform=linux/amd64 -it -p 8091:8091 -p 8090:8090 -p 5000:5000 -p 9091:9090 -p 3000:3000 --name=app -d darlannoetzold/tcc-spyware:4.0
+
 docker exec -itd app /init-spyware-api.sh
 docker exec -itd app /init-remoteanalyser.sh
 docker exec -itd app /init-handler-hatespeech.sh
 ```
-
 ---
 ## API:
 * A API:
