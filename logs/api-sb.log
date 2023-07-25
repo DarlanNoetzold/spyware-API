@@ -1,223 +1,728 @@
-2023-06-28 14:26:10,138 INFO tech.noetzold.spyware.SpywareApplication [restartedMain] Starting SpywareApplication using Java 11.0.15.1 on hal9000 with PID 5380 (C:\Users\Usuário\Documents\Projetos\GitHub\spyware-API\target\classes started by Usuário in C:\Users\Usuário\Documents\Projetos\GitHub\spyware-API)
-2023-06-28 14:26:10,140 INFO tech.noetzold.spyware.SpywareApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
-2023-06-28 14:26:10,177 INFO org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2023-06-28 14:26:10,177 INFO org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2023-06-28 14:26:11,041 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Multiple Spring Data modules found, entering strict repository configuration mode!
-2023-06-28 14:26:11,042 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-06-28 14:26:11,183 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 133 ms. Found 7 JPA repository interfaces.
-2023-06-28 14:26:11,193 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Multiple Spring Data modules found, entering strict repository configuration mode!
-2023-06-28 14:26:11,194 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2023-06-28 14:26:11,205 INFO org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport [restartedMain] Spring Data Redis - Could not safely identify store assignment for repository candidate interface tech.noetzold.spyware.repository.AlertRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
-2023-06-28 14:26:11,206 INFO org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport [restartedMain] Spring Data Redis - Could not safely identify store assignment for repository candidate interface tech.noetzold.spyware.repository.BadLanguageRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
-2023-06-28 14:26:11,206 INFO org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport [restartedMain] Spring Data Redis - Could not safely identify store assignment for repository candidate interface tech.noetzold.spyware.repository.ImageRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
-2023-06-28 14:26:11,206 INFO org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport [restartedMain] Spring Data Redis - Could not safely identify store assignment for repository candidate interface tech.noetzold.spyware.repository.MaliciousPortRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
-2023-06-28 14:26:11,206 INFO org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport [restartedMain] Spring Data Redis - Could not safely identify store assignment for repository candidate interface tech.noetzold.spyware.repository.MaliciousProcessRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
-2023-06-28 14:26:11,207 INFO org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport [restartedMain] Spring Data Redis - Could not safely identify store assignment for repository candidate interface tech.noetzold.spyware.repository.MaliciousWebsiteRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
-2023-06-28 14:26:11,207 INFO org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport [restartedMain] Spring Data Redis - Could not safely identify store assignment for repository candidate interface tech.noetzold.spyware.repository.UserRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
-2023-06-28 14:26:11,207 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 7 ms. Found 0 Redis repository interfaces.
-2023-06-28 14:26:11,905 WARN io.undertow.websockets.jsr [restartedMain] UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
-2023-06-28 14:26:11,917 INFO io.undertow.servlet [restartedMain] Initializing Spring embedded WebApplicationContext
-2023-06-28 14:26:11,917 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 1739 ms
-2023-06-28 14:26:12,381 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Starting...
-2023-06-28 14:26:12,544 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
-2023-06-28 14:26:12,561 INFO org.flywaydb.core.internal.license.VersionPrinter [restartedMain] Flyway Community Edition 8.0.5 by Redgate
-2023-06-28 14:26:12,561 INFO org.flywaydb.core.internal.database.base.BaseDatabaseType [restartedMain] Database: jdbc:postgresql://localhost:5432/spywareApi (PostgreSQL 14.5)
-2023-06-28 14:26:12,593 INFO org.flywaydb.core.internal.command.DbValidate [restartedMain] Successfully validated 1 migration (execution time 00:00.016s)
-2023-06-28 14:26:12,599 INFO org.flywaydb.core.internal.command.DbMigrate [restartedMain] Current version of schema "public": 01
-2023-06-28 14:26:12,599 INFO org.flywaydb.core.internal.command.DbMigrate [restartedMain] Schema "public" is up to date. No migration necessary.
-2023-06-28 14:26:12,665 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-06-28 14:26:12,708 INFO org.hibernate.Version [restartedMain] HHH000412: Hibernate ORM core version 5.6.5.Final
-2023-06-28 14:26:12,825 INFO org.hibernate.annotations.common.Version [restartedMain] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2023-06-28 14:26:12,925 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
-2023-06-28 14:26:13,429 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [restartedMain] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-06-28 14:26:13,437 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [restartedMain] Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-06-28 14:26:13,566 DEBUG org.hibernate.stat.internal.StatisticsInitiator [restartedMain] Statistics initialized [enabled=false]
-2023-06-28 14:26:14,116 INFO org.springframework.amqp.rabbit.connection.CachingConnectionFactory [restartedMain] Attempting to connect to: [localhost:5672]
-2023-06-28 14:26:14,156 INFO org.springframework.amqp.rabbit.connection.CachingConnectionFactory [restartedMain] Created new connection: rabbitConnectionFactory#3f7c46bb:0/SimpleConnection@53fbcdea [delegate=amqp://admin@127.0.0.1:5672/, localPort= 55509]
-2023-06-28 14:26:14,310 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2023-06-28 14:26:14,447 INFO org.springframework.security.web.DefaultSecurityFilterChain [restartedMain] Will not secure any request
-2023-06-28 14:26:15,539 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
-2023-06-28 14:26:15,544 INFO org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver [restartedMain] Exposing 15 endpoint(s) beneath base path '/actuator'
-2023-06-28 14:26:15,607 INFO io.undertow [restartedMain] starting server: Undertow - 2.2.16.Final
-2023-06-28 14:26:15,615 INFO org.xnio [restartedMain] XNIO version 3.8.6.Final
-2023-06-28 14:26:15,622 INFO org.xnio.nio [restartedMain] XNIO NIO Implementation Version 3.8.6.Final
-2023-06-28 14:26:15,682 INFO org.jboss.threads [restartedMain] JBoss Threads version 3.1.0.Final
-2023-06-28 14:26:15,713 INFO org.springframework.boot.web.embedded.undertow.UndertowWebServer [restartedMain] Undertow started on port(s) 8091 (http)
-2023-06-28 14:26:15,717 INFO org.springframework.amqp.rabbit.listener.DirectMessageListenerContainer [restartedMain] Container initialized for queues: [ALERT]
-2023-06-28 14:26:15,725 INFO org.springframework.amqp.rabbit.listener.DirectMessageListenerContainer [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] SimpleConsumer [queue=ALERT, index=0, consumerTag=amq.ctag-94CQb9brDBKDdZaMjG6j-w identity=31ab0dcd] started
-2023-06-28 14:26:15,730 INFO tech.noetzold.spyware.SpywareApplication [restartedMain] Started SpywareApplication in 5.905 seconds (JVM running for 6.453)
-2023-06-28 14:26:16,792 INFO io.undertow.servlet [XNIO-1 task-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
-2023-06-28 14:26:16,793 INFO org.springframework.web.servlet.DispatcherServlet [XNIO-1 task-1] Initializing Servlet 'dispatcherServlet'
-2023-06-28 14:26:16,794 INFO org.springframework.web.servlet.DispatcherServlet [XNIO-1 task-1] Completed initialization in 1 ms
-2023-06-28 14:26:38,538 INFO org.springframework.amqp.rabbit.listener.DirectMessageListenerContainer [SpringApplicationShutdownHook] Successfully waited for consumers to finish.
-2023-06-28 14:26:38,539 INFO io.undertow [SpringApplicationShutdownHook] stopping server: Undertow - 2.2.16.Final
-2023-06-28 14:26:38,544 INFO io.undertow.servlet [SpringApplicationShutdownHook] Destroying Spring FrameworkServlet 'dispatcherServlet'
-2023-06-28 14:26:38,557 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
-2023-06-28 14:26:38,559 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
-2023-06-28 14:26:38,565 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
-2023-06-28 18:05:21,832 INFO tech.noetzold.spyware.SpywareApplication [restartedMain] Starting SpywareApplication using Java 11.0.15.1 on hal9000 with PID 25468 (C:\Users\Usuário\Documents\Projetos\GitHub\spyware-API\target\classes started by Usuário in C:\Users\Usuário\Documents\Projetos\GitHub\spyware-API)
-2023-06-28 18:05:21,834 INFO tech.noetzold.spyware.SpywareApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
-2023-06-28 18:05:21,873 INFO org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2023-06-28 18:05:21,873 INFO org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2023-06-28 18:05:22,833 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Multiple Spring Data modules found, entering strict repository configuration mode!
-2023-06-28 18:05:22,834 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-06-28 18:05:22,977 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 136 ms. Found 7 JPA repository interfaces.
-2023-06-28 18:05:22,988 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Multiple Spring Data modules found, entering strict repository configuration mode!
-2023-06-28 18:05:22,989 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
-2023-06-28 18:05:23,000 INFO org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport [restartedMain] Spring Data Redis - Could not safely identify store assignment for repository candidate interface tech.noetzold.spyware.repository.AlertRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
-2023-06-28 18:05:23,000 INFO org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport [restartedMain] Spring Data Redis - Could not safely identify store assignment for repository candidate interface tech.noetzold.spyware.repository.BadLanguageRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
-2023-06-28 18:05:23,000 INFO org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport [restartedMain] Spring Data Redis - Could not safely identify store assignment for repository candidate interface tech.noetzold.spyware.repository.ImageRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
-2023-06-28 18:05:23,001 INFO org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport [restartedMain] Spring Data Redis - Could not safely identify store assignment for repository candidate interface tech.noetzold.spyware.repository.MaliciousPortRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
-2023-06-28 18:05:23,001 INFO org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport [restartedMain] Spring Data Redis - Could not safely identify store assignment for repository candidate interface tech.noetzold.spyware.repository.MaliciousProcessRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
-2023-06-28 18:05:23,001 INFO org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport [restartedMain] Spring Data Redis - Could not safely identify store assignment for repository candidate interface tech.noetzold.spyware.repository.MaliciousWebsiteRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
-2023-06-28 18:05:23,002 INFO org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport [restartedMain] Spring Data Redis - Could not safely identify store assignment for repository candidate interface tech.noetzold.spyware.repository.UserRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
-2023-06-28 18:05:23,002 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 7 ms. Found 0 Redis repository interfaces.
-2023-06-28 18:05:23,668 WARN io.undertow.websockets.jsr [restartedMain] UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
-2023-06-28 18:05:23,681 INFO io.undertow.servlet [restartedMain] Initializing Spring embedded WebApplicationContext
-2023-06-28 18:05:23,681 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 1808 ms
-2023-06-28 18:05:24,112 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Starting...
-2023-06-28 18:05:24,264 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
-2023-06-28 18:05:24,278 INFO org.flywaydb.core.internal.license.VersionPrinter [restartedMain] Flyway Community Edition 8.0.5 by Redgate
-2023-06-28 18:05:24,279 INFO org.flywaydb.core.internal.database.base.BaseDatabaseType [restartedMain] Database: jdbc:postgresql://localhost:5432/spywareApi (PostgreSQL 14.5)
-2023-06-28 18:05:24,325 INFO org.flywaydb.core.internal.command.DbValidate [restartedMain] Successfully validated 1 migration (execution time 00:00.029s)
-2023-06-28 18:05:24,332 INFO org.flywaydb.core.internal.command.DbMigrate [restartedMain] Current version of schema "public": 01
-2023-06-28 18:05:24,333 INFO org.flywaydb.core.internal.command.DbMigrate [restartedMain] Schema "public" is up to date. No migration necessary.
-2023-06-28 18:05:24,402 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-06-28 18:05:24,452 INFO org.hibernate.Version [restartedMain] HHH000412: Hibernate ORM core version 5.6.5.Final
-2023-06-28 18:05:24,593 INFO org.hibernate.annotations.common.Version [restartedMain] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2023-06-28 18:05:24,701 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
-2023-06-28 18:05:25,160 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [restartedMain] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-06-28 18:05:25,166 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [restartedMain] Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-06-28 18:05:25,287 DEBUG org.hibernate.stat.internal.StatisticsInitiator [restartedMain] Statistics initialized [enabled=false]
-2023-06-28 18:05:25,852 INFO org.springframework.amqp.rabbit.connection.CachingConnectionFactory [restartedMain] Attempting to connect to: [localhost:5672]
-2023-06-28 18:05:25,897 INFO org.springframework.amqp.rabbit.connection.CachingConnectionFactory [restartedMain] Created new connection: rabbitConnectionFactory#3557fbb:0/SimpleConnection@29990404 [delegate=amqp://admin@127.0.0.1:5672/, localPort= 59265]
-2023-06-28 18:05:26,050 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2023-06-28 18:05:26,171 INFO org.springframework.security.web.DefaultSecurityFilterChain [restartedMain] Will not secure any request
-2023-06-28 18:05:27,361 WARN org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] Unable to start LiveReload server
-2023-06-28 18:05:27,368 INFO org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver [restartedMain] Exposing 15 endpoint(s) beneath base path '/actuator'
-2023-06-28 18:05:27,444 INFO io.undertow [restartedMain] starting server: Undertow - 2.2.16.Final
-2023-06-28 18:05:27,453 INFO org.xnio [restartedMain] XNIO version 3.8.6.Final
-2023-06-28 18:05:27,464 INFO org.xnio.nio [restartedMain] XNIO NIO Implementation Version 3.8.6.Final
-2023-06-28 18:05:27,530 INFO org.jboss.threads [restartedMain] JBoss Threads version 3.1.0.Final
-2023-06-28 18:05:27,566 INFO org.springframework.boot.web.embedded.undertow.UndertowWebServer [restartedMain] Undertow started on port(s) 8091 (http)
-2023-06-28 18:05:27,570 INFO org.springframework.amqp.rabbit.listener.DirectMessageListenerContainer [restartedMain] Container initialized for queues: [ALERT]
-2023-06-28 18:05:27,580 INFO org.springframework.amqp.rabbit.listener.DirectMessageListenerContainer [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] SimpleConsumer [queue=ALERT, index=0, consumerTag=amq.ctag-BZDvz0LPm6ZZxX67dEWGVA identity=62b01cca] started
-2023-06-28 18:05:27,582 INFO tech.noetzold.spyware.SpywareApplication [restartedMain] Started SpywareApplication in 6.067 seconds (JVM running for 6.596)
-2023-06-28 18:05:28,742 INFO io.undertow.servlet [XNIO-1 task-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
-2023-06-28 18:05:28,742 INFO org.springframework.web.servlet.DispatcherServlet [XNIO-1 task-1] Initializing Servlet 'dispatcherServlet'
-2023-06-28 18:05:28,744 INFO org.springframework.web.servlet.DispatcherServlet [XNIO-1 task-1] Completed initialization in 2 ms
-2023-06-28 18:12:54,096 DEBUG org.hibernate.SQL [XNIO-1 task-1] select user0_.id as id1_6_, user0_.login as login2_6_, user0_.password as password3_6_ from usuario user0_ where user0_.login=?
-2023-06-28 18:12:54,739 DEBUG org.hibernate.SQL [XNIO-1 task-1] select alert0_.id as id1_0_, alert0_.data_cadastro as data_cad2_0_, alert0_.image as image3_0_, alert0_.pc_id as pc_id4_0_, alert0_.processos as processo5_0_ from alert alert0_ limit ?
-2023-06-28 18:12:54,786 DEBUG org.hibernate.SQL [XNIO-1 task-1] select count(alert0_.id) as col_0_0_ from alert alert0_
-2023-06-28 18:12:59,209 DEBUG org.hibernate.SQL [XNIO-1 task-1] select user0_.id as id1_6_, user0_.login as login2_6_, user0_.password as password3_6_ from usuario user0_ where user0_.login=?
-2023-06-28 19:54:52,798 DEBUG org.hibernate.SQL [XNIO-1 task-1] select user0_.id as id1_6_, user0_.login as login2_6_, user0_.password as password3_6_ from usuario user0_ where user0_.login=?
-2023-06-28 19:54:52,876 DEBUG org.hibernate.SQL [XNIO-1 task-1] select alert0_.id as id1_0_, alert0_.data_cadastro as data_cad2_0_, alert0_.image as image3_0_, alert0_.pc_id as pc_id4_0_, alert0_.processos as processo5_0_ from alert alert0_ limit ?
-2023-06-28 19:54:52,900 DEBUG org.hibernate.SQL [XNIO-1 task-1] select count(alert0_.id) as col_0_0_ from alert alert0_
-2023-06-28 19:54:58,965 DEBUG org.hibernate.SQL [XNIO-1 task-1] select user0_.id as id1_6_, user0_.login as login2_6_, user0_.password as password3_6_ from usuario user0_ where user0_.login=?
-2023-06-28 19:56:20,921 DEBUG org.hibernate.SQL [XNIO-1 task-1] select user0_.id as id1_6_, user0_.login as login2_6_, user0_.password as password3_6_ from usuario user0_ where user0_.login=?
-2023-06-28 19:56:20,995 DEBUG org.hibernate.SQL [XNIO-1 task-1] select alert0_.id as id1_0_, alert0_.data_cadastro as data_cad2_0_, alert0_.image as image3_0_, alert0_.pc_id as pc_id4_0_, alert0_.processos as processo5_0_ from alert alert0_ limit ?
-2023-06-28 19:56:21,021 DEBUG org.hibernate.SQL [XNIO-1 task-1] select count(alert0_.id) as col_0_0_ from alert alert0_
-2023-06-28 19:56:37,806 DEBUG org.hibernate.SQL [XNIO-1 task-1] select user0_.id as id1_6_, user0_.login as login2_6_, user0_.password as password3_6_ from usuario user0_ where user0_.login=?
-2023-06-28 20:05:57,440 DEBUG org.hibernate.SQL [XNIO-1 task-1] select user0_.id as id1_6_, user0_.login as login2_6_, user0_.password as password3_6_ from usuario user0_ where user0_.login=?
-2023-06-28 20:05:57,510 DEBUG org.hibernate.SQL [XNIO-1 task-1] select alert0_.id as id1_0_, alert0_.data_cadastro as data_cad2_0_, alert0_.image as image3_0_, alert0_.pc_id as pc_id4_0_, alert0_.processos as processo5_0_ from alert alert0_ limit ?
-2023-06-28 20:05:57,536 DEBUG org.hibernate.SQL [XNIO-1 task-1] select count(alert0_.id) as col_0_0_ from alert alert0_
-2023-06-28 20:07:00,277 DEBUG org.hibernate.SQL [XNIO-1 task-1] select user0_.id as id1_6_, user0_.login as login2_6_, user0_.password as password3_6_ from usuario user0_ where user0_.login=?
-2023-06-28 20:07:00,346 DEBUG org.hibernate.SQL [XNIO-1 task-1] select alert0_.id as id1_0_, alert0_.data_cadastro as data_cad2_0_, alert0_.image as image3_0_, alert0_.pc_id as pc_id4_0_, alert0_.processos as processo5_0_ from alert alert0_ limit ?
-2023-06-28 20:07:00,368 DEBUG org.hibernate.SQL [XNIO-1 task-1] select count(alert0_.id) as col_0_0_ from alert alert0_
-2023-06-28 20:10:52,343 DEBUG org.hibernate.SQL [XNIO-1 task-1] select user0_.id as id1_6_, user0_.login as login2_6_, user0_.password as password3_6_ from usuario user0_ where user0_.login=?
-2023-06-28 20:10:52,409 DEBUG org.hibernate.SQL [XNIO-1 task-1] select alert0_.id as id1_0_, alert0_.data_cadastro as data_cad2_0_, alert0_.image as image3_0_, alert0_.pc_id as pc_id4_0_, alert0_.processos as processo5_0_ from alert alert0_ limit ?
-2023-06-28 20:10:52,432 DEBUG org.hibernate.SQL [XNIO-1 task-1] select count(alert0_.id) as col_0_0_ from alert alert0_
-2023-06-28 20:28:05,812 DEBUG org.hibernate.SQL [XNIO-1 task-1] select user0_.id as id1_6_, user0_.login as login2_6_, user0_.password as password3_6_ from usuario user0_ where user0_.login=?
-2023-06-28 20:28:05,889 DEBUG org.hibernate.SQL [XNIO-1 task-1] select alert0_.id as id1_0_, alert0_.data_cadastro as data_cad2_0_, alert0_.image as image3_0_, alert0_.pc_id as pc_id4_0_, alert0_.processos as processo5_0_ from alert alert0_ limit ?
-2023-06-28 20:28:05,914 DEBUG org.hibernate.SQL [XNIO-1 task-1] select count(alert0_.id) as col_0_0_ from alert alert0_
-2023-06-28 20:30:01,893 DEBUG org.hibernate.SQL [XNIO-1 task-1] select user0_.id as id1_6_, user0_.login as login2_6_, user0_.password as password3_6_ from usuario user0_ where user0_.login=?
-2023-06-28 20:30:01,958 DEBUG org.hibernate.SQL [XNIO-1 task-1] select alert0_.id as id1_0_, alert0_.data_cadastro as data_cad2_0_, alert0_.image as image3_0_, alert0_.pc_id as pc_id4_0_, alert0_.processos as processo5_0_ from alert alert0_ limit ?
-2023-06-28 20:30:01,983 DEBUG org.hibernate.SQL [XNIO-1 task-1] select count(alert0_.id) as col_0_0_ from alert alert0_
-2023-06-28 20:46:46,762 DEBUG org.hibernate.SQL [XNIO-1 task-1] select user0_.id as id1_6_, user0_.login as login2_6_, user0_.password as password3_6_ from usuario user0_ where user0_.login=?
-2023-06-28 20:46:46,840 DEBUG org.hibernate.SQL [XNIO-1 task-1] select alert0_.id as id1_0_, alert0_.data_cadastro as data_cad2_0_, alert0_.image as image3_0_, alert0_.pc_id as pc_id4_0_, alert0_.processos as processo5_0_ from alert alert0_ limit ?
-2023-06-28 20:46:46,865 DEBUG org.hibernate.SQL [XNIO-1 task-1] select count(alert0_.id) as col_0_0_ from alert alert0_
-2023-06-28 20:53:44,644 DEBUG org.hibernate.SQL [XNIO-1 task-1] select user0_.id as id1_6_, user0_.login as login2_6_, user0_.password as password3_6_ from usuario user0_ where user0_.login=?
-2023-06-28 20:53:44,716 DEBUG org.hibernate.SQL [XNIO-1 task-1] select badlanguag0_.id as id1_1_, badlanguag0_.word as word2_1_ from bad_language badlanguag0_
-2023-06-28 20:54:21,233 DEBUG org.hibernate.SQL [XNIO-1 task-1] select user0_.id as id1_6_, user0_.login as login2_6_, user0_.password as password3_6_ from usuario user0_ where user0_.login=?
-2023-06-28 20:54:21,303 DEBUG org.hibernate.SQL [XNIO-1 task-1] select maliciousp0_.id as id1_3_, maliciousp0_.vulnarable_banners as vulnarab2_3_ from malicious_port maliciousp0_
-2023-06-28 20:54:45,114 DEBUG org.hibernate.SQL [XNIO-1 task-1] select user0_.id as id1_6_, user0_.login as login2_6_, user0_.password as password3_6_ from usuario user0_ where user0_.login=?
-2023-06-28 20:54:45,178 DEBUG org.hibernate.SQL [XNIO-1 task-1] select maliciousp0_.id as id1_3_, maliciousp0_.vulnarable_banners as vulnarab2_3_ from malicious_port maliciousp0_
-2023-06-28 20:54:45,710 DEBUG org.hibernate.SQL [XNIO-1 task-1] select user0_.id as id1_6_, user0_.login as login2_6_, user0_.password as password3_6_ from usuario user0_ where user0_.login=?
-2023-06-28 20:54:45,779 DEBUG org.hibernate.SQL [XNIO-1 task-1] select maliciousp0_.id as id1_4_, maliciousp0_.name_exe as name_exe2_4_ from malicious_process maliciousp0_
-2023-06-28 20:54:53,766 DEBUG org.hibernate.SQL [XNIO-1 task-1] select user0_.id as id1_6_, user0_.login as login2_6_, user0_.password as password3_6_ from usuario user0_ where user0_.login=?
-2023-06-28 20:54:53,832 DEBUG org.hibernate.SQL [XNIO-1 task-1] select maliciousw0_.id as id1_5_, maliciousw0_.url as url2_5_ from malicious_website maliciousw0_
-2023-06-28 21:02:58,359 DEBUG org.hibernate.SQL [XNIO-1 task-1] select user0_.id as id1_6_, user0_.login as login2_6_, user0_.password as password3_6_ from usuario user0_ where user0_.login=?
-2023-06-28 21:02:58,431 DEBUG org.hibernate.SQL [XNIO-1 task-1] select maliciousw0_.id as id1_5_, maliciousw0_.url as url2_5_ from malicious_website maliciousw0_
-2023-06-28 21:03:00,330 DEBUG org.hibernate.SQL [XNIO-1 task-1] select user0_.id as id1_6_, user0_.login as login2_6_, user0_.password as password3_6_ from usuario user0_ where user0_.login=?
-2023-06-28 21:03:00,394 DEBUG org.hibernate.SQL [XNIO-1 task-1] select maliciousw0_.id as id1_5_, maliciousw0_.url as url2_5_ from malicious_website maliciousw0_
-2023-06-28 21:03:08,235 DEBUG org.hibernate.SQL [XNIO-1 task-1] select user0_.id as id1_6_, user0_.login as login2_6_, user0_.password as password3_6_ from usuario user0_ where user0_.login=?
-2023-06-28 21:03:08,307 DEBUG org.hibernate.SQL [XNIO-1 task-1] select alert0_.id as id1_0_, alert0_.data_cadastro as data_cad2_0_, alert0_.image as image3_0_, alert0_.pc_id as pc_id4_0_, alert0_.processos as processo5_0_ from alert alert0_ limit ?
-2023-06-28 21:03:08,334 DEBUG org.hibernate.SQL [XNIO-1 task-1] select count(alert0_.id) as col_0_0_ from alert alert0_
-2023-06-28 21:03:21,299 DEBUG org.hibernate.SQL [XNIO-1 task-1] select user0_.id as id1_6_, user0_.login as login2_6_, user0_.password as password3_6_ from usuario user0_ where user0_.login=?
-2023-06-28 21:03:21,365 DEBUG org.hibernate.SQL [XNIO-1 task-1] select badlanguag0_.id as id1_1_, badlanguag0_.word as word2_1_ from bad_language badlanguag0_
-2023-06-28 21:03:22,216 DEBUG org.hibernate.SQL [XNIO-1 task-1] select user0_.id as id1_6_, user0_.login as login2_6_, user0_.password as password3_6_ from usuario user0_ where user0_.login=?
-2023-06-28 21:10:03,239 DEBUG org.hibernate.SQL [XNIO-1 task-1] select user0_.id as id1_6_, user0_.login as login2_6_, user0_.password as password3_6_ from usuario user0_ where user0_.login=?
-2023-06-28 21:10:03,341 DEBUG org.hibernate.SQL [XNIO-1 task-1] select alert0_.id as id1_0_, alert0_.data_cadastro as data_cad2_0_, alert0_.image as image3_0_, alert0_.pc_id as pc_id4_0_, alert0_.processos as processo5_0_ from alert alert0_ limit ?
-2023-06-28 21:10:03,368 DEBUG org.hibernate.SQL [XNIO-1 task-1] select count(alert0_.id) as col_0_0_ from alert alert0_
-2023-06-28 21:10:13,361 DEBUG org.hibernate.SQL [XNIO-1 task-1] select user0_.id as id1_6_, user0_.login as login2_6_, user0_.password as password3_6_ from usuario user0_ where user0_.login=?
-2023-06-28 21:10:13,481 DEBUG org.hibernate.SQL [XNIO-1 task-1] select image0_.id as id1_2_0_, image0_.base64img as base2_2_0_, image0_.product_img as product_3_2_0_ from image image0_ where image0_.id=?
-2023-06-28 21:10:13,514 INFO tech.noetzold.spyware.controller.AlertController [XNIO-1 task-1] Create Alert 6 for user darlan generate by asdasd
-2023-06-28 21:10:13,585 DEBUG org.hibernate.SQL [pool-1-thread-4] select alert0_.id as id1_0_0_, alert0_.data_cadastro as data_cad2_0_0_, alert0_.image as image3_0_0_, alert0_.pc_id as pc_id4_0_0_, alert0_.processos as processo5_0_0_ from alert alert0_ where alert0_.id=?
-2023-06-28 21:10:13,590 DEBUG org.hibernate.SQL [pool-1-thread-4] select nextval ('sequence')
-2023-06-28 21:10:13,604 DEBUG org.hibernate.SQL [pool-1-thread-4] insert into alert (data_cadastro, image, pc_id, processos, id) values (?, ?, ?, ?, ?)
-2023-06-28 21:11:03,241 DEBUG org.hibernate.SQL [XNIO-1 task-1] select user0_.id as id1_6_, user0_.login as login2_6_, user0_.password as password3_6_ from usuario user0_ where user0_.login=?
-2023-06-28 21:11:03,320 DEBUG org.hibernate.SQL [XNIO-1 task-1] select alert0_.id as id1_0_, alert0_.data_cadastro as data_cad2_0_, alert0_.image as image3_0_, alert0_.pc_id as pc_id4_0_, alert0_.processos as processo5_0_ from alert alert0_ limit ?
-2023-06-28 21:11:03,345 DEBUG org.hibernate.SQL [XNIO-1 task-1] select count(alert0_.id) as col_0_0_ from alert alert0_
-2023-06-28 21:11:06,292 DEBUG org.hibernate.SQL [XNIO-1 task-1] select user0_.id as id1_6_, user0_.login as login2_6_, user0_.password as password3_6_ from usuario user0_ where user0_.login=?
-2023-06-28 21:11:06,358 DEBUG org.hibernate.SQL [XNIO-1 task-1] select maliciousw0_.id as id1_5_, maliciousw0_.url as url2_5_ from malicious_website maliciousw0_
-2023-06-28 21:11:30,444 DEBUG org.hibernate.SQL [XNIO-1 task-1] select user0_.id as id1_6_, user0_.login as login2_6_, user0_.password as password3_6_ from usuario user0_ where user0_.login=?
-2023-06-28 21:11:30,514 DEBUG org.hibernate.SQL [XNIO-1 task-1] select alert0_.id as id1_0_, alert0_.data_cadastro as data_cad2_0_, alert0_.image as image3_0_, alert0_.pc_id as pc_id4_0_, alert0_.processos as processo5_0_ from alert alert0_ limit ?
-2023-06-28 21:11:30,541 DEBUG org.hibernate.SQL [XNIO-1 task-1] select count(alert0_.id) as col_0_0_ from alert alert0_
-2023-06-28 21:12:50,996 DEBUG org.hibernate.SQL [XNIO-1 task-1] select user0_.id as id1_6_, user0_.login as login2_6_, user0_.password as password3_6_ from usuario user0_ where user0_.login=?
-2023-06-28 21:12:51,077 DEBUG org.hibernate.SQL [XNIO-1 task-1] select alert0_.id as id1_0_, alert0_.data_cadastro as data_cad2_0_, alert0_.image as image3_0_, alert0_.pc_id as pc_id4_0_, alert0_.processos as processo5_0_ from alert alert0_ where alert0_.pc_id=?
-2023-06-28 21:15:37,666 DEBUG org.hibernate.SQL [XNIO-1 task-2] select user0_.id as id1_6_, user0_.login as login2_6_, user0_.password as password3_6_ from usuario user0_ where user0_.login=?
-2023-06-28 21:15:37,767 DEBUG org.hibernate.SQL [XNIO-1 task-2] select image0_.id as id1_2_0_, image0_.base64img as base2_2_0_, image0_.product_img as product_3_2_0_ from image image0_ where image0_.id=?
-2023-06-28 21:15:37,780 INFO tech.noetzold.spyware.controller.AlertController [XNIO-1 task-2] Create Alert 6 for user user generate by asdasd
-2023-06-28 21:15:37,809 DEBUG org.hibernate.SQL [pool-1-thread-5] select alert0_.id as id1_0_0_, alert0_.data_cadastro as data_cad2_0_0_, alert0_.image as image3_0_0_, alert0_.pc_id as pc_id4_0_0_, alert0_.processos as processo5_0_0_ from alert alert0_ where alert0_.id=?
-2023-06-28 21:15:37,812 DEBUG org.hibernate.SQL [pool-1-thread-5] insert into alert (data_cadastro, image, pc_id, processos, id) values (?, ?, ?, ?, ?)
-2023-06-28 21:15:54,940 DEBUG org.hibernate.SQL [XNIO-1 task-2] select user0_.id as id1_6_, user0_.login as login2_6_, user0_.password as password3_6_ from usuario user0_ where user0_.login=?
-2023-06-28 21:15:55,015 DEBUG org.hibernate.SQL [XNIO-1 task-2] select alert0_.id as id1_0_, alert0_.data_cadastro as data_cad2_0_, alert0_.image as image3_0_, alert0_.pc_id as pc_id4_0_, alert0_.processos as processo5_0_ from alert alert0_ where alert0_.pc_id=?
-2023-06-28 21:16:26,129 DEBUG org.hibernate.SQL [XNIO-1 task-2] select user0_.id as id1_6_, user0_.login as login2_6_, user0_.password as password3_6_ from usuario user0_ where user0_.login=?
-2023-06-28 21:16:26,196 DEBUG org.hibernate.SQL [XNIO-1 task-2] select alert0_.id as id1_0_, alert0_.data_cadastro as data_cad2_0_, alert0_.image as image3_0_, alert0_.pc_id as pc_id4_0_, alert0_.processos as processo5_0_ from alert alert0_ limit ?
-2023-06-28 21:16:26,219 DEBUG org.hibernate.SQL [XNIO-1 task-2] select count(alert0_.id) as col_0_0_ from alert alert0_
-2023-06-28 21:16:58,786 DEBUG org.hibernate.SQL [XNIO-1 task-2] select user0_.id as id1_6_, user0_.login as login2_6_, user0_.password as password3_6_ from usuario user0_ where user0_.login=?
-2023-06-28 21:16:58,854 DEBUG org.hibernate.SQL [XNIO-1 task-2] select alert0_.id as id1_0_, alert0_.data_cadastro as data_cad2_0_, alert0_.image as image3_0_, alert0_.pc_id as pc_id4_0_, alert0_.processos as processo5_0_ from alert alert0_ where alert0_.pc_id=?
-2023-06-28 21:17:08,590 DEBUG org.hibernate.SQL [XNIO-1 task-2] select user0_.id as id1_6_, user0_.login as login2_6_, user0_.password as password3_6_ from usuario user0_ where user0_.login=?
-2023-06-28 21:17:26,902 DEBUG org.hibernate.SQL [XNIO-1 task-2] select user0_.id as id1_6_, user0_.login as login2_6_, user0_.password as password3_6_ from usuario user0_ where user0_.login=?
-2023-06-28 21:17:26,967 DEBUG org.hibernate.SQL [XNIO-1 task-2] select alert0_.id as id1_0_, alert0_.data_cadastro as data_cad2_0_, alert0_.image as image3_0_, alert0_.pc_id as pc_id4_0_, alert0_.processos as processo5_0_ from alert alert0_ where alert0_.pc_id=?
-2023-06-28 21:17:39,253 DEBUG org.hibernate.SQL [XNIO-1 task-2] select user0_.id as id1_6_, user0_.login as login2_6_, user0_.password as password3_6_ from usuario user0_ where user0_.login=?
-2023-06-28 21:23:34,671 DEBUG org.hibernate.SQL [XNIO-1 task-1] select user0_.id as id1_6_, user0_.login as login2_6_, user0_.password as password3_6_ from usuario user0_ where user0_.login=?
-2023-06-28 21:23:34,747 DEBUG org.hibernate.SQL [XNIO-1 task-1] select alert0_.id as id1_0_, alert0_.data_cadastro as data_cad2_0_, alert0_.image as image3_0_, alert0_.pc_id as pc_id4_0_, alert0_.processos as processo5_0_ from alert alert0_ limit ?
-2023-06-28 21:23:34,770 DEBUG org.hibernate.SQL [XNIO-1 task-1] select count(alert0_.id) as col_0_0_ from alert alert0_
-2023-06-28 21:23:59,233 DEBUG org.hibernate.SQL [XNIO-1 task-1] select user0_.id as id1_6_, user0_.login as login2_6_, user0_.password as password3_6_ from usuario user0_ where user0_.login=?
-2023-06-28 21:23:59,300 DEBUG org.hibernate.SQL [XNIO-1 task-1] select alert0_.id as id1_0_, alert0_.data_cadastro as data_cad2_0_, alert0_.image as image3_0_, alert0_.pc_id as pc_id4_0_, alert0_.processos as processo5_0_ from alert alert0_ where alert0_.pc_id=?
-2023-06-28 21:23:59,966 DEBUG org.hibernate.SQL [XNIO-1 task-1] select user0_.id as id1_6_, user0_.login as login2_6_, user0_.password as password3_6_ from usuario user0_ where user0_.login=?
-2023-06-28 21:25:52,819 DEBUG org.hibernate.SQL [XNIO-1 task-1] select user0_.id as id1_6_, user0_.login as login2_6_, user0_.password as password3_6_ from usuario user0_ where user0_.login=?
-2023-06-28 21:25:52,890 DEBUG org.hibernate.SQL [XNIO-1 task-1] select alert0_.id as id1_0_, alert0_.data_cadastro as data_cad2_0_, alert0_.image as image3_0_, alert0_.pc_id as pc_id4_0_, alert0_.processos as processo5_0_ from alert alert0_ where alert0_.pc_id=?
-2023-06-28 21:26:01,330 DEBUG org.hibernate.SQL [XNIO-1 task-1] select user0_.id as id1_6_, user0_.login as login2_6_, user0_.password as password3_6_ from usuario user0_ where user0_.login=?
-2023-06-28 21:26:02,006 DEBUG org.hibernate.SQL [XNIO-1 task-1] select user0_.id as id1_6_, user0_.login as login2_6_, user0_.password as password3_6_ from usuario user0_ where user0_.login=?
-2023-06-28 21:26:49,743 DEBUG org.hibernate.SQL [XNIO-1 task-1] select user0_.id as id1_6_, user0_.login as login2_6_, user0_.password as password3_6_ from usuario user0_ where user0_.login=?
-2023-06-28 21:26:49,815 DEBUG org.hibernate.SQL [XNIO-1 task-1] select alert0_.id as id1_0_, alert0_.data_cadastro as data_cad2_0_, alert0_.image as image3_0_, alert0_.pc_id as pc_id4_0_, alert0_.processos as processo5_0_ from alert alert0_ where alert0_.pc_id=?
-2023-06-28 21:26:59,845 DEBUG org.hibernate.SQL [XNIO-1 task-1] select user0_.id as id1_6_, user0_.login as login2_6_, user0_.password as password3_6_ from usuario user0_ where user0_.login=?
-2023-06-28 21:27:00,418 DEBUG org.hibernate.SQL [XNIO-1 task-1] select user0_.id as id1_6_, user0_.login as login2_6_, user0_.password as password3_6_ from usuario user0_ where user0_.login=?
-2023-06-28 21:28:39,079 DEBUG org.hibernate.SQL [XNIO-1 task-1] select user0_.id as id1_6_, user0_.login as login2_6_, user0_.password as password3_6_ from usuario user0_ where user0_.login=?
-2023-06-28 21:28:39,151 DEBUG org.hibernate.SQL [XNIO-1 task-1] select alert0_.id as id1_0_, alert0_.data_cadastro as data_cad2_0_, alert0_.image as image3_0_, alert0_.pc_id as pc_id4_0_, alert0_.processos as processo5_0_ from alert alert0_ where alert0_.pc_id=?
-2023-06-28 21:28:39,666 DEBUG org.hibernate.SQL [XNIO-1 task-1] select user0_.id as id1_6_, user0_.login as login2_6_, user0_.password as password3_6_ from usuario user0_ where user0_.login=?
-2023-06-28 21:34:31,662 DEBUG org.hibernate.SQL [XNIO-1 task-2] select user0_.id as id1_6_, user0_.login as login2_6_, user0_.password as password3_6_ from usuario user0_ where user0_.login=?
-2023-06-28 21:34:31,739 DEBUG org.hibernate.SQL [XNIO-1 task-2] select alert0_.id as id1_0_, alert0_.data_cadastro as data_cad2_0_, alert0_.image as image3_0_, alert0_.pc_id as pc_id4_0_, alert0_.processos as processo5_0_ from alert alert0_ where alert0_.pc_id=?
-2023-06-28 21:58:10,257 DEBUG org.hibernate.SQL [XNIO-1 task-2] select user0_.id as id1_6_, user0_.login as login2_6_, user0_.password as password3_6_ from usuario user0_ where user0_.login=?
-2023-06-28 21:58:10,326 DEBUG org.hibernate.SQL [XNIO-1 task-2] select alert0_.id as id1_0_, alert0_.data_cadastro as data_cad2_0_, alert0_.image as image3_0_, alert0_.pc_id as pc_id4_0_, alert0_.processos as processo5_0_ from alert alert0_ where alert0_.pc_id=?
-2023-06-28 21:58:20,013 DEBUG org.hibernate.SQL [XNIO-1 task-2] select user0_.id as id1_6_, user0_.login as login2_6_, user0_.password as password3_6_ from usuario user0_ where user0_.login=?
-2023-06-28 21:58:20,082 DEBUG org.hibernate.SQL [XNIO-1 task-2] select alert0_.id as id1_0_, alert0_.data_cadastro as data_cad2_0_, alert0_.image as image3_0_, alert0_.pc_id as pc_id4_0_, alert0_.processos as processo5_0_ from alert alert0_ limit ?
-2023-06-28 21:58:20,104 DEBUG org.hibernate.SQL [XNIO-1 task-2] select count(alert0_.id) as col_0_0_ from alert alert0_
-2023-06-28 22:13:02,261 INFO org.springframework.amqp.rabbit.listener.DirectMessageListenerContainer [SpringApplicationShutdownHook] Successfully waited for consumers to finish.
-2023-06-28 22:13:02,263 INFO io.undertow [SpringApplicationShutdownHook] stopping server: Undertow - 2.2.16.Final
-2023-06-28 22:13:02,273 INFO io.undertow.servlet [SpringApplicationShutdownHook] Destroying Spring FrameworkServlet 'dispatcherServlet'
-2023-06-28 22:13:02,290 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
-2023-06-28 22:13:02,295 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
-2023-06-28 22:13:02,298 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2023-07-07 07:04:45,241 INFO tech.noetzold.spyware.SpywareApplication [restartedMain] Starting SpywareApplication using Java 11.0.15.1 on hal9000 with PID 18304 (C:\Users\Usuário\Documents\Projetos\GitHub\spyware-API\target\classes started by Usuário in C:\Users\Usuário\Documents\Projetos\GitHub\spyware-API)
+2023-07-07 07:04:45,248 INFO tech.noetzold.spyware.SpywareApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2023-07-07 07:04:45,302 INFO org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-07-07 07:04:45,302 INFO org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-07-07 07:04:46,499 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-07-07 07:04:46,501 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-07-07 07:04:46,685 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 173 ms. Found 7 JPA repository interfaces.
+2023-07-07 07:04:46,698 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-07-07 07:04:46,699 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-07-07 07:04:46,716 INFO org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport [restartedMain] Spring Data Redis - Could not safely identify store assignment for repository candidate interface tech.noetzold.spyware.repository.AlertRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2023-07-07 07:04:46,716 INFO org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport [restartedMain] Spring Data Redis - Could not safely identify store assignment for repository candidate interface tech.noetzold.spyware.repository.BadLanguageRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2023-07-07 07:04:46,717 INFO org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport [restartedMain] Spring Data Redis - Could not safely identify store assignment for repository candidate interface tech.noetzold.spyware.repository.ImageRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2023-07-07 07:04:46,717 INFO org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport [restartedMain] Spring Data Redis - Could not safely identify store assignment for repository candidate interface tech.noetzold.spyware.repository.MaliciousPortRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2023-07-07 07:04:46,717 INFO org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport [restartedMain] Spring Data Redis - Could not safely identify store assignment for repository candidate interface tech.noetzold.spyware.repository.MaliciousProcessRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2023-07-07 07:04:46,718 INFO org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport [restartedMain] Spring Data Redis - Could not safely identify store assignment for repository candidate interface tech.noetzold.spyware.repository.MaliciousWebsiteRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2023-07-07 07:04:46,718 INFO org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport [restartedMain] Spring Data Redis - Could not safely identify store assignment for repository candidate interface tech.noetzold.spyware.repository.UserRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2023-07-07 07:04:46,718 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
+2023-07-07 07:04:47,524 WARN io.undertow.websockets.jsr [restartedMain] UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2023-07-07 07:04:47,548 INFO io.undertow.servlet [restartedMain] Initializing Spring embedded WebApplicationContext
+2023-07-07 07:04:47,548 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 2246 ms
+2023-07-07 07:04:48,229 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Starting...
+2023-07-07 07:04:48,446 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
+2023-07-07 07:04:48,468 INFO org.flywaydb.core.internal.license.VersionPrinter [restartedMain] Flyway Community Edition 8.0.5 by Redgate
+2023-07-07 07:04:48,468 INFO org.flywaydb.core.internal.database.base.BaseDatabaseType [restartedMain] Database: jdbc:postgresql://localhost:5432/spywareApi (PostgreSQL 14.5)
+2023-07-07 07:04:48,514 INFO org.flywaydb.core.internal.command.DbValidate [restartedMain] Successfully validated 1 migration (execution time 00:00.023s)
+2023-07-07 07:04:48,519 INFO org.flywaydb.core.internal.command.DbMigrate [restartedMain] Current version of schema "public": 01
+2023-07-07 07:04:48,519 INFO org.flywaydb.core.internal.command.DbMigrate [restartedMain] Schema "public" is up to date. No migration necessary.
+2023-07-07 07:04:48,606 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-07-07 07:04:48,663 INFO org.hibernate.Version [restartedMain] HHH000412: Hibernate ORM core version 5.6.5.Final
+2023-07-07 07:04:48,850 INFO org.hibernate.annotations.common.Version [restartedMain] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-07-07 07:04:48,986 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2023-07-07 07:04:49,554 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [restartedMain] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-07-07 07:04:49,562 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [restartedMain] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-07-07 07:04:49,684 DEBUG org.hibernate.stat.internal.StatisticsInitiator [restartedMain] Statistics initialized [enabled=false]
+2023-07-07 07:04:50,397 INFO org.springframework.amqp.rabbit.connection.CachingConnectionFactory [restartedMain] Attempting to connect to: [localhost:5672]
+2023-07-07 07:04:50,453 INFO org.springframework.amqp.rabbit.connection.CachingConnectionFactory [restartedMain] Created new connection: rabbitConnectionFactory#5bb0eb91:0/SimpleConnection@48a065cf [delegate=amqp://admin@127.0.0.1:5672/, localPort= 60965]
+2023-07-07 07:04:50,616 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-07-07 07:04:50,767 INFO org.springframework.security.web.DefaultSecurityFilterChain [restartedMain] Will not secure any request
+2023-07-07 07:04:51,946 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2023-07-07 07:04:51,952 INFO org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver [restartedMain] Exposing 15 endpoint(s) beneath base path '/actuator'
+2023-07-07 07:04:52,027 INFO io.undertow [restartedMain] starting server: Undertow - 2.2.16.Final
+2023-07-07 07:04:52,036 INFO org.xnio [restartedMain] XNIO version 3.8.6.Final
+2023-07-07 07:04:52,045 INFO org.xnio.nio [restartedMain] XNIO NIO Implementation Version 3.8.6.Final
+2023-07-07 07:04:52,118 INFO org.jboss.threads [restartedMain] JBoss Threads version 3.1.0.Final
+2023-07-07 07:04:52,155 INFO org.springframework.boot.web.embedded.undertow.UndertowWebServer [restartedMain] Undertow started on port(s) 8091 (http)
+2023-07-07 07:04:52,162 INFO org.springframework.amqp.rabbit.listener.DirectMessageListenerContainer [restartedMain] Container initialized for queues: [ALERT]
+2023-07-07 07:04:52,171 INFO org.springframework.amqp.rabbit.listener.DirectMessageListenerContainer [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] SimpleConsumer [queue=ALERT, index=0, consumerTag=amq.ctag-T9pLFH0wOCUq4TeUzvdCdw identity=5ebc945a] started
+2023-07-07 07:04:52,175 INFO tech.noetzold.spyware.SpywareApplication [restartedMain] Started SpywareApplication in 7.386 seconds (JVM running for 8.141)
+2023-07-07 07:04:52,828 INFO io.undertow.servlet [XNIO-1 task-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-07-07 07:04:52,828 INFO org.springframework.web.servlet.DispatcherServlet [XNIO-1 task-1] Initializing Servlet 'dispatcherServlet'
+2023-07-07 07:04:52,830 INFO org.springframework.web.servlet.DispatcherServlet [XNIO-1 task-1] Completed initialization in 2 ms
+2023-07-07 07:30:28,254 DEBUG org.hibernate.SQL [XNIO-1 task-1] select user0_.id as id1_6_, user0_.login as login2_6_, user0_.password as password3_6_ from usuario user0_ where user0_.login=?
+2023-07-07 07:30:28,987 DEBUG org.hibernate.SQL [XNIO-1 task-1] select alert0_.id as id1_0_0_, alert0_.data_cadastro as data_cad2_0_0_, alert0_.image as image3_0_0_, alert0_.pc_id as pc_id4_0_0_, alert0_.processos as processo5_0_0_ from alert alert0_ where alert0_.id=?
+2023-07-07 07:30:28,996 ERROR io.undertow.request [XNIO-1 task-1] UT005023: Exception handling request to /alert/52
+org.springframework.web.util.NestedServletException: Request processing failed; nested exception is java.util.NoSuchElementException: No value present
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:497)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:584)
+	at io.undertow.servlet.handlers.ServletHandler.handleRequest(ServletHandler.java:74)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:129)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:327)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:115)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:81)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:122)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:126)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:81)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:109)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:149)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at tech.noetzold.spyware.security.JWTValidarFilter.doFilterInternal(JWTValidarFilter.java:47)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:219)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:213)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:103)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:89)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:110)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:80)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:55)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:211)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:183)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:354)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:267)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:96)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at io.undertow.servlet.handlers.FilterHandler.handleRequest(FilterHandler.java:84)
+	at io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:62)
+	at io.undertow.servlet.handlers.ServletChain$1.handleRequest(ServletChain.java:68)
+	at io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36)
+	at io.undertow.servlet.handlers.RedirectDirHandler.handleRequest(RedirectDirHandler.java:68)
+	at io.undertow.servlet.handlers.security.SSLInformationAssociationHandler.handleRequest(SSLInformationAssociationHandler.java:117)
+	at io.undertow.servlet.handlers.security.ServletAuthenticationCallHandler.handleRequest(ServletAuthenticationCallHandler.java:57)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.security.handlers.AbstractConfidentialityHandler.handleRequest(AbstractConfidentialityHandler.java:46)
+	at io.undertow.servlet.handlers.security.ServletConfidentialityConstraintHandler.handleRequest(ServletConfidentialityConstraintHandler.java:64)
+	at io.undertow.security.handlers.AuthenticationMechanismsHandler.handleRequest(AuthenticationMechanismsHandler.java:60)
+	at io.undertow.servlet.handlers.security.CachedAuthenticatedSessionHandler.handleRequest(CachedAuthenticatedSessionHandler.java:77)
+	at io.undertow.security.handlers.AbstractSecurityContextAssociationHandler.handleRequest(AbstractSecurityContextAssociationHandler.java:43)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.servlet.handlers.SendErrorPageHandler.handleRequest(SendErrorPageHandler.java:52)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.servlet.handlers.SessionRestoringHandler.handleRequest(SessionRestoringHandler.java:119)
+	at io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:275)
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$100(ServletInitialHandler.java:79)
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:134)
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:131)
+	at io.undertow.servlet.core.ServletRequestContextThreadSetupAction$1.call(ServletRequestContextThreadSetupAction.java:48)
+	at io.undertow.servlet.core.ContextClassLoaderSetupAction$1.call(ContextClassLoaderSetupAction.java:43)
+	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:255)
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$000(ServletInitialHandler.java:79)
+	at io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:100)
+	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:387)
+	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:852)
+	at org.jboss.threads.ContextClassLoaderSavingRunnable.run(ContextClassLoaderSavingRunnable.java:35)
+	at org.jboss.threads.EnhancedQueueExecutor.safeRun(EnhancedQueueExecutor.java:2019)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.doRunTask(EnhancedQueueExecutor.java:1558)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1449)
+	at org.xnio.XnioWorker$WorkerThreadFactory$1$1.run(XnioWorker.java:1280)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: java.util.NoSuchElementException: No value present
+	at java.base/java.util.Optional.get(Optional.java:148)
+	at tech.noetzold.spyware.service.AlertService.findAlertaById(AlertService.java:25)
+	at tech.noetzold.spyware.service.AlertService$$FastClassBySpringCGLIB$$fff73260.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:783)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753)
+	at org.springframework.cache.interceptor.CacheInterceptor.lambda$invoke$0(CacheInterceptor.java:54)
+	at org.springframework.cache.interceptor.CacheAspectSupport.invokeOperation(CacheAspectSupport.java:366)
+	at org.springframework.cache.interceptor.CacheAspectSupport.execute(CacheAspectSupport.java:421)
+	at org.springframework.cache.interceptor.CacheAspectSupport.execute(CacheAspectSupport.java:345)
+	at org.springframework.cache.interceptor.CacheInterceptor.invoke(CacheInterceptor.java:64)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:698)
+	at tech.noetzold.spyware.service.AlertService$$EnhancerBySpringCGLIB$$4e1f9ffc.findAlertaById(<generated>)
+	at tech.noetzold.spyware.controller.AlertController.getAlertId(AlertController.java:59)
+	at tech.noetzold.spyware.controller.AlertController$$FastClassBySpringCGLIB$$24eb314.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:783)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:388)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:698)
+	at tech.noetzold.spyware.controller.AlertController$$EnhancerBySpringCGLIB$$b7b3b384.getAlertId(<generated>)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	... 97 common frames omitted
+2023-07-07 07:30:38,823 DEBUG org.hibernate.SQL [XNIO-1 task-1] select user0_.id as id1_6_, user0_.login as login2_6_, user0_.password as password3_6_ from usuario user0_ where user0_.login=?
+2023-07-07 07:30:38,926 DEBUG org.hibernate.SQL [XNIO-1 task-1] select alert0_.id as id1_0_, alert0_.data_cadastro as data_cad2_0_, alert0_.image as image3_0_, alert0_.pc_id as pc_id4_0_, alert0_.processos as processo5_0_ from alert alert0_ limit ?
+2023-07-07 07:30:38,974 DEBUG org.hibernate.SQL [XNIO-1 task-1] select count(alert0_.id) as col_0_0_ from alert alert0_
+2023-07-07 07:30:45,529 DEBUG org.hibernate.SQL [XNIO-1 task-1] select user0_.id as id1_6_, user0_.login as login2_6_, user0_.password as password3_6_ from usuario user0_ where user0_.login=?
+2023-07-07 07:30:45,606 DEBUG org.hibernate.SQL [XNIO-1 task-1] select alert0_.id as id1_0_0_, alert0_.data_cadastro as data_cad2_0_0_, alert0_.image as image3_0_0_, alert0_.pc_id as pc_id4_0_0_, alert0_.processos as processo5_0_0_ from alert alert0_ where alert0_.id=?
+2023-07-07 07:31:17,070 DEBUG org.hibernate.SQL [XNIO-1 task-1] select user0_.id as id1_6_, user0_.login as login2_6_, user0_.password as password3_6_ from usuario user0_ where user0_.login=?
+2023-07-07 07:31:17,149 DEBUG org.hibernate.SQL [XNIO-1 task-1] select alert0_.id as id1_0_, alert0_.data_cadastro as data_cad2_0_, alert0_.image as image3_0_, alert0_.pc_id as pc_id4_0_, alert0_.processos as processo5_0_ from alert alert0_ where alert0_.pc_id=?
+2023-07-07 07:31:37,618 DEBUG org.hibernate.SQL [XNIO-1 task-1] select user0_.id as id1_6_, user0_.login as login2_6_, user0_.password as password3_6_ from usuario user0_ where user0_.login=?
+2023-07-07 07:31:58,735 DEBUG org.hibernate.SQL [XNIO-1 task-1] select user0_.id as id1_6_, user0_.login as login2_6_, user0_.password as password3_6_ from usuario user0_ where user0_.login=?
+2023-07-07 07:31:58,809 DEBUG org.hibernate.SQL [XNIO-1 task-1] select alert0_.id as id1_0_, alert0_.data_cadastro as data_cad2_0_, alert0_.image as image3_0_, alert0_.pc_id as pc_id4_0_, alert0_.processos as processo5_0_ from alert alert0_ where alert0_.pc_id=?
+2023-07-07 07:33:10,109 DEBUG org.hibernate.SQL [XNIO-1 task-1] select user0_.id as id1_6_, user0_.login as login2_6_, user0_.password as password3_6_ from usuario user0_ where user0_.login=?
+2023-07-07 07:33:10,178 DEBUG org.hibernate.SQL [XNIO-1 task-1] select alert0_.id as id1_0_, alert0_.data_cadastro as data_cad2_0_, alert0_.image as image3_0_, alert0_.pc_id as pc_id4_0_, alert0_.processos as processo5_0_ from alert alert0_ limit ?
+2023-07-07 07:33:10,202 DEBUG org.hibernate.SQL [XNIO-1 task-1] select count(alert0_.id) as col_0_0_ from alert alert0_
+2023-07-07 07:33:20,212 DEBUG org.hibernate.SQL [XNIO-1 task-1] select user0_.id as id1_6_, user0_.login as login2_6_, user0_.password as password3_6_ from usuario user0_ where user0_.login=?
+2023-07-07 07:33:41,829 DEBUG org.hibernate.SQL [XNIO-1 task-1] select user0_.id as id1_6_, user0_.login as login2_6_, user0_.password as password3_6_ from usuario user0_ where user0_.login=?
+2023-07-07 07:35:18,622 DEBUG org.hibernate.SQL [XNIO-1 task-1] select user0_.id as id1_6_, user0_.login as login2_6_, user0_.password as password3_6_ from usuario user0_ where user0_.login=?
+2023-07-07 07:35:18,695 DEBUG org.hibernate.SQL [XNIO-1 task-1] select alert0_.id as id1_0_0_, alert0_.data_cadastro as data_cad2_0_0_, alert0_.image as image3_0_0_, alert0_.pc_id as pc_id4_0_0_, alert0_.processos as processo5_0_0_ from alert alert0_ where alert0_.id=?
+2023-07-07 07:39:11,851 DEBUG org.hibernate.SQL [XNIO-1 task-1] select user0_.id as id1_6_, user0_.login as login2_6_, user0_.password as password3_6_ from usuario user0_ where user0_.login=?
+2023-07-07 07:39:11,921 DEBUG org.hibernate.SQL [XNIO-1 task-1] select maliciousp0_.id as id1_4_, maliciousp0_.name_exe as name_exe2_4_ from malicious_process maliciousp0_
+2023-07-07 07:39:19,574 DEBUG org.hibernate.SQL [XNIO-1 task-1] select user0_.id as id1_6_, user0_.login as login2_6_, user0_.password as password3_6_ from usuario user0_ where user0_.login=?
+2023-07-07 07:39:19,643 DEBUG org.hibernate.SQL [XNIO-1 task-1] select alert0_.id as id1_0_0_, alert0_.data_cadastro as data_cad2_0_0_, alert0_.image as image3_0_0_, alert0_.pc_id as pc_id4_0_0_, alert0_.processos as processo5_0_0_ from alert alert0_ where alert0_.id=?
+2023-07-07 09:00:35,191 DEBUG org.hibernate.SQL [XNIO-1 task-1] select user0_.id as id1_6_, user0_.login as login2_6_, user0_.password as password3_6_ from usuario user0_ where user0_.login=?
+2023-07-07 09:00:35,266 DEBUG org.hibernate.SQL [XNIO-1 task-1] select alert0_.id as id1_0_0_, alert0_.data_cadastro as data_cad2_0_0_, alert0_.image as image3_0_0_, alert0_.pc_id as pc_id4_0_0_, alert0_.processos as processo5_0_0_ from alert alert0_ where alert0_.id=?
+2023-07-07 09:01:50,147 INFO org.springframework.amqp.rabbit.listener.DirectMessageListenerContainer [SpringApplicationShutdownHook] Successfully waited for consumers to finish.
+2023-07-07 09:01:50,149 INFO io.undertow [SpringApplicationShutdownHook] stopping server: Undertow - 2.2.16.Final
+2023-07-07 09:01:50,157 INFO io.undertow.servlet [SpringApplicationShutdownHook] Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-07-07 09:01:50,169 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-07-07 09:01:50,173 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2023-07-07 09:01:50,179 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2023-07-07 14:22:25,403 INFO tech.noetzold.spyware.SpywareApplication [restartedMain] Starting SpywareApplication using Java 11.0.15.1 on hal9000 with PID 23856 (C:\Users\Usuário\Documents\Projetos\GitHub\spyware-API\target\classes started by Usuário in C:\Users\Usuário\Documents\Projetos\GitHub\spyware-API)
+2023-07-07 14:22:25,405 INFO tech.noetzold.spyware.SpywareApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2023-07-07 14:22:25,452 INFO org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-07-07 14:22:25,452 INFO org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-07-07 14:22:26,425 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-07-07 14:22:26,427 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-07-07 14:22:26,619 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 184 ms. Found 7 JPA repository interfaces.
+2023-07-07 14:22:26,631 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-07-07 14:22:26,632 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-07-07 14:22:26,648 INFO org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport [restartedMain] Spring Data Redis - Could not safely identify store assignment for repository candidate interface tech.noetzold.spyware.repository.AlertRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2023-07-07 14:22:26,648 INFO org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport [restartedMain] Spring Data Redis - Could not safely identify store assignment for repository candidate interface tech.noetzold.spyware.repository.BadLanguageRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2023-07-07 14:22:26,649 INFO org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport [restartedMain] Spring Data Redis - Could not safely identify store assignment for repository candidate interface tech.noetzold.spyware.repository.ImageRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2023-07-07 14:22:26,649 INFO org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport [restartedMain] Spring Data Redis - Could not safely identify store assignment for repository candidate interface tech.noetzold.spyware.repository.MaliciousPortRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2023-07-07 14:22:26,650 INFO org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport [restartedMain] Spring Data Redis - Could not safely identify store assignment for repository candidate interface tech.noetzold.spyware.repository.MaliciousProcessRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2023-07-07 14:22:26,650 INFO org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport [restartedMain] Spring Data Redis - Could not safely identify store assignment for repository candidate interface tech.noetzold.spyware.repository.MaliciousWebsiteRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2023-07-07 14:22:26,650 INFO org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport [restartedMain] Spring Data Redis - Could not safely identify store assignment for repository candidate interface tech.noetzold.spyware.repository.UserRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2023-07-07 14:22:26,650 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 9 ms. Found 0 Redis repository interfaces.
+2023-07-07 14:22:27,358 WARN io.undertow.websockets.jsr [restartedMain] UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2023-07-07 14:22:27,377 INFO io.undertow.servlet [restartedMain] Initializing Spring embedded WebApplicationContext
+2023-07-07 14:22:27,377 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 1924 ms
+2023-07-07 14:22:27,892 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Starting...
+2023-07-07 14:22:28,075 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
+2023-07-07 14:22:28,098 INFO org.flywaydb.core.internal.license.VersionPrinter [restartedMain] Flyway Community Edition 8.0.5 by Redgate
+2023-07-07 14:22:28,099 INFO org.flywaydb.core.internal.database.base.BaseDatabaseType [restartedMain] Database: jdbc:postgresql://localhost:5432/spywareApi (PostgreSQL 14.5)
+2023-07-07 14:22:28,145 INFO org.flywaydb.core.internal.command.DbValidate [restartedMain] Successfully validated 1 migration (execution time 00:00.023s)
+2023-07-07 14:22:28,151 INFO org.flywaydb.core.internal.command.DbMigrate [restartedMain] Current version of schema "public": 01
+2023-07-07 14:22:28,151 INFO org.flywaydb.core.internal.command.DbMigrate [restartedMain] Schema "public" is up to date. No migration necessary.
+2023-07-07 14:22:28,223 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-07-07 14:22:28,277 INFO org.hibernate.Version [restartedMain] HHH000412: Hibernate ORM core version 5.6.5.Final
+2023-07-07 14:22:28,434 INFO org.hibernate.annotations.common.Version [restartedMain] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-07-07 14:22:28,553 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2023-07-07 14:22:29,014 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [restartedMain] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-07-07 14:22:29,019 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [restartedMain] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-07-07 14:22:29,124 DEBUG org.hibernate.stat.internal.StatisticsInitiator [restartedMain] Statistics initialized [enabled=false]
+2023-07-07 14:22:29,743 INFO org.springframework.amqp.rabbit.connection.CachingConnectionFactory [restartedMain] Attempting to connect to: [localhost:5672]
+2023-07-07 14:22:29,796 INFO org.springframework.amqp.rabbit.connection.CachingConnectionFactory [restartedMain] Created new connection: rabbitConnectionFactory#f6a6030:0/SimpleConnection@15d92e9a [delegate=amqp://admin@127.0.0.1:5672/, localPort= 63898]
+2023-07-07 14:22:29,934 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-07-07 14:22:30,071 INFO org.springframework.security.web.DefaultSecurityFilterChain [restartedMain] Will not secure any request
+2023-07-07 14:22:31,169 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2023-07-07 14:22:31,173 INFO org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver [restartedMain] Exposing 15 endpoint(s) beneath base path '/actuator'
+2023-07-07 14:22:31,240 INFO io.undertow [restartedMain] starting server: Undertow - 2.2.16.Final
+2023-07-07 14:22:31,248 INFO org.xnio [restartedMain] XNIO version 3.8.6.Final
+2023-07-07 14:22:31,256 INFO org.xnio.nio [restartedMain] XNIO NIO Implementation Version 3.8.6.Final
+2023-07-07 14:22:31,325 INFO org.jboss.threads [restartedMain] JBoss Threads version 3.1.0.Final
+2023-07-07 14:22:31,360 INFO org.springframework.boot.web.embedded.undertow.UndertowWebServer [restartedMain] Undertow started on port(s) 8091 (http)
+2023-07-07 14:22:31,365 INFO org.springframework.amqp.rabbit.listener.DirectMessageListenerContainer [restartedMain] Container initialized for queues: [ALERT]
+2023-07-07 14:22:31,374 INFO org.springframework.amqp.rabbit.listener.DirectMessageListenerContainer [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] SimpleConsumer [queue=ALERT, index=0, consumerTag=amq.ctag-N0FYqB06bDnym-KacCT3kw identity=342c45e5] started
+2023-07-07 14:22:31,378 INFO tech.noetzold.spyware.SpywareApplication [restartedMain] Started SpywareApplication in 6.321 seconds (JVM running for 7.008)
+2023-07-07 14:22:31,822 INFO io.undertow.servlet [XNIO-1 task-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-07-07 14:22:31,822 INFO org.springframework.web.servlet.DispatcherServlet [XNIO-1 task-1] Initializing Servlet 'dispatcherServlet'
+2023-07-07 14:22:31,823 INFO org.springframework.web.servlet.DispatcherServlet [XNIO-1 task-1] Completed initialization in 1 ms
+2023-07-07 14:23:08,487 DEBUG org.hibernate.SQL [XNIO-1 task-1] select user0_.id as id1_6_, user0_.login as login2_6_, user0_.password as password3_6_ from usuario user0_ where user0_.login=?
+2023-07-07 14:23:11,063 ERROR io.undertow.request [XNIO-1 task-1] UT005023: Exception handling request to /alert/pcId/user
+org.springframework.web.util.NestedServletException: Request processing failed; nested exception is org.springframework.data.redis.RedisConnectionFailureException: Unable to connect to Redis; nested exception is io.lettuce.core.RedisConnectionException: Unable to connect to localhost:6379
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:497)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:584)
+	at io.undertow.servlet.handlers.ServletHandler.handleRequest(ServletHandler.java:74)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:129)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:327)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:115)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:81)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:122)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:126)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:81)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:109)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:149)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at tech.noetzold.spyware.security.JWTValidarFilter.doFilterInternal(JWTValidarFilter.java:47)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:219)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:213)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:103)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:89)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:110)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:80)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:55)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:211)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:183)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:354)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:267)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:96)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at io.undertow.servlet.handlers.FilterHandler.handleRequest(FilterHandler.java:84)
+	at io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:62)
+	at io.undertow.servlet.handlers.ServletChain$1.handleRequest(ServletChain.java:68)
+	at io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36)
+	at io.undertow.servlet.handlers.RedirectDirHandler.handleRequest(RedirectDirHandler.java:68)
+	at io.undertow.servlet.handlers.security.SSLInformationAssociationHandler.handleRequest(SSLInformationAssociationHandler.java:117)
+	at io.undertow.servlet.handlers.security.ServletAuthenticationCallHandler.handleRequest(ServletAuthenticationCallHandler.java:57)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.security.handlers.AbstractConfidentialityHandler.handleRequest(AbstractConfidentialityHandler.java:46)
+	at io.undertow.servlet.handlers.security.ServletConfidentialityConstraintHandler.handleRequest(ServletConfidentialityConstraintHandler.java:64)
+	at io.undertow.security.handlers.AuthenticationMechanismsHandler.handleRequest(AuthenticationMechanismsHandler.java:60)
+	at io.undertow.servlet.handlers.security.CachedAuthenticatedSessionHandler.handleRequest(CachedAuthenticatedSessionHandler.java:77)
+	at io.undertow.security.handlers.AbstractSecurityContextAssociationHandler.handleRequest(AbstractSecurityContextAssociationHandler.java:43)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.servlet.handlers.SendErrorPageHandler.handleRequest(SendErrorPageHandler.java:52)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.servlet.handlers.SessionRestoringHandler.handleRequest(SessionRestoringHandler.java:119)
+	at io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:275)
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$100(ServletInitialHandler.java:79)
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:134)
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:131)
+	at io.undertow.servlet.core.ServletRequestContextThreadSetupAction$1.call(ServletRequestContextThreadSetupAction.java:48)
+	at io.undertow.servlet.core.ContextClassLoaderSetupAction$1.call(ContextClassLoaderSetupAction.java:43)
+	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:255)
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$000(ServletInitialHandler.java:79)
+	at io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:100)
+	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:387)
+	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:852)
+	at org.jboss.threads.ContextClassLoaderSavingRunnable.run(ContextClassLoaderSavingRunnable.java:35)
+	at org.jboss.threads.EnhancedQueueExecutor.safeRun(EnhancedQueueExecutor.java:2019)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.doRunTask(EnhancedQueueExecutor.java:1558)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1449)
+	at org.xnio.XnioWorker$WorkerThreadFactory$1$1.run(XnioWorker.java:1280)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: org.springframework.data.redis.RedisConnectionFailureException: Unable to connect to Redis; nested exception is io.lettuce.core.RedisConnectionException: Unable to connect to localhost:6379
+	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory$ExceptionTranslatingConnectionProvider.translateException(LettuceConnectionFactory.java:1689)
+	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory$ExceptionTranslatingConnectionProvider.getConnection(LettuceConnectionFactory.java:1597)
+	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory$SharedConnection.getNativeConnection(LettuceConnectionFactory.java:1383)
+	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory$SharedConnection.getConnection(LettuceConnectionFactory.java:1366)
+	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory.getSharedConnection(LettuceConnectionFactory.java:1093)
+	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory.getConnection(LettuceConnectionFactory.java:421)
+	at org.springframework.data.redis.cache.DefaultRedisCacheWriter.execute(DefaultRedisCacheWriter.java:304)
+	at org.springframework.data.redis.cache.DefaultRedisCacheWriter.get(DefaultRedisCacheWriter.java:130)
+	at org.springframework.data.redis.cache.RedisCache.lookup(RedisCache.java:89)
+	at org.springframework.cache.support.AbstractValueAdaptingCache.get(AbstractValueAdaptingCache.java:58)
+	at org.springframework.cache.interceptor.AbstractCacheInvoker.doGet(AbstractCacheInvoker.java:73)
+	at org.springframework.cache.interceptor.CacheAspectSupport.findInCaches(CacheAspectSupport.java:571)
+	at org.springframework.cache.interceptor.CacheAspectSupport.findCachedItem(CacheAspectSupport.java:536)
+	at org.springframework.cache.interceptor.CacheAspectSupport.execute(CacheAspectSupport.java:402)
+	at org.springframework.cache.interceptor.CacheAspectSupport.execute(CacheAspectSupport.java:345)
+	at org.springframework.cache.interceptor.CacheInterceptor.invoke(CacheInterceptor.java:64)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:698)
+	at tech.noetzold.spyware.service.AlertService$$EnhancerBySpringCGLIB$$5379f76.findAlertaByPcId(<generated>)
+	at tech.noetzold.spyware.controller.AlertController.getAlertPcId(AlertController.java:72)
+	at tech.noetzold.spyware.controller.AlertController$$FastClassBySpringCGLIB$$24eb314.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:783)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:388)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:698)
+	at tech.noetzold.spyware.controller.AlertController$$EnhancerBySpringCGLIB$$53535a53.getAlertPcId(<generated>)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	... 97 common frames omitted
+Caused by: io.lettuce.core.RedisConnectionException: Unable to connect to localhost:6379
+	at io.lettuce.core.RedisConnectionException.create(RedisConnectionException.java:78)
+	at io.lettuce.core.RedisConnectionException.create(RedisConnectionException.java:56)
+	at io.lettuce.core.AbstractRedisClient.getConnection(AbstractRedisClient.java:330)
+	at io.lettuce.core.RedisClient.connect(RedisClient.java:216)
+	at org.springframework.data.redis.connection.lettuce.StandaloneConnectionProvider.lambda$getConnection$1(StandaloneConnectionProvider.java:115)
+	at java.base/java.util.Optional.orElseGet(Optional.java:369)
+	at org.springframework.data.redis.connection.lettuce.StandaloneConnectionProvider.getConnection(StandaloneConnectionProvider.java:115)
+	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory$ExceptionTranslatingConnectionProvider.getConnection(LettuceConnectionFactory.java:1595)
+	... 141 common frames omitted
+Caused by: io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: no further information: localhost/127.0.0.1:6379
+Caused by: java.net.ConnectException: Connection refused: no further information
+	at java.base/sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:779)
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:330)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:334)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:710)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:658)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:584)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:496)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:986)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2023-07-07 14:24:07,614 DEBUG org.hibernate.SQL [XNIO-1 task-1] select user0_.id as id1_6_, user0_.login as login2_6_, user0_.password as password3_6_ from usuario user0_ where user0_.login=?
+2023-07-07 14:24:09,761 ERROR io.undertow.request [XNIO-1 task-1] UT005023: Exception handling request to /alert
+org.springframework.web.util.NestedServletException: Request processing failed; nested exception is org.springframework.data.redis.RedisConnectionFailureException: Unable to connect to Redis; nested exception is io.lettuce.core.RedisConnectionException: Unable to connect to localhost:6379
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:497)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:584)
+	at io.undertow.servlet.handlers.ServletHandler.handleRequest(ServletHandler.java:74)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:129)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:327)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:115)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:81)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:122)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:126)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:81)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:109)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:149)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at tech.noetzold.spyware.security.JWTValidarFilter.doFilterInternal(JWTValidarFilter.java:47)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:219)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:213)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:103)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:89)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:110)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:80)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:55)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:211)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:183)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:354)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:267)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:96)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at io.undertow.servlet.core.ManagedFilter.doFilter(ManagedFilter.java:61)
+	at io.undertow.servlet.handlers.FilterHandler$FilterChainImpl.doFilter(FilterHandler.java:131)
+	at io.undertow.servlet.handlers.FilterHandler.handleRequest(FilterHandler.java:84)
+	at io.undertow.servlet.handlers.security.ServletSecurityRoleHandler.handleRequest(ServletSecurityRoleHandler.java:62)
+	at io.undertow.servlet.handlers.ServletChain$1.handleRequest(ServletChain.java:68)
+	at io.undertow.servlet.handlers.ServletDispatchingHandler.handleRequest(ServletDispatchingHandler.java:36)
+	at io.undertow.servlet.handlers.RedirectDirHandler.handleRequest(RedirectDirHandler.java:68)
+	at io.undertow.servlet.handlers.security.SSLInformationAssociationHandler.handleRequest(SSLInformationAssociationHandler.java:117)
+	at io.undertow.servlet.handlers.security.ServletAuthenticationCallHandler.handleRequest(ServletAuthenticationCallHandler.java:57)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.security.handlers.AbstractConfidentialityHandler.handleRequest(AbstractConfidentialityHandler.java:46)
+	at io.undertow.servlet.handlers.security.ServletConfidentialityConstraintHandler.handleRequest(ServletConfidentialityConstraintHandler.java:64)
+	at io.undertow.security.handlers.AuthenticationMechanismsHandler.handleRequest(AuthenticationMechanismsHandler.java:60)
+	at io.undertow.servlet.handlers.security.CachedAuthenticatedSessionHandler.handleRequest(CachedAuthenticatedSessionHandler.java:77)
+	at io.undertow.security.handlers.AbstractSecurityContextAssociationHandler.handleRequest(AbstractSecurityContextAssociationHandler.java:43)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.servlet.handlers.SendErrorPageHandler.handleRequest(SendErrorPageHandler.java:52)
+	at io.undertow.server.handlers.PredicateHandler.handleRequest(PredicateHandler.java:43)
+	at io.undertow.servlet.handlers.SessionRestoringHandler.handleRequest(SessionRestoringHandler.java:119)
+	at io.undertow.servlet.handlers.ServletInitialHandler.handleFirstRequest(ServletInitialHandler.java:275)
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$100(ServletInitialHandler.java:79)
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:134)
+	at io.undertow.servlet.handlers.ServletInitialHandler$2.call(ServletInitialHandler.java:131)
+	at io.undertow.servlet.core.ServletRequestContextThreadSetupAction$1.call(ServletRequestContextThreadSetupAction.java:48)
+	at io.undertow.servlet.core.ContextClassLoaderSetupAction$1.call(ContextClassLoaderSetupAction.java:43)
+	at io.undertow.servlet.handlers.ServletInitialHandler.dispatchRequest(ServletInitialHandler.java:255)
+	at io.undertow.servlet.handlers.ServletInitialHandler.access$000(ServletInitialHandler.java:79)
+	at io.undertow.servlet.handlers.ServletInitialHandler$1.handleRequest(ServletInitialHandler.java:100)
+	at io.undertow.server.Connectors.executeRootHandler(Connectors.java:387)
+	at io.undertow.server.HttpServerExchange$1.run(HttpServerExchange.java:852)
+	at org.jboss.threads.ContextClassLoaderSavingRunnable.run(ContextClassLoaderSavingRunnable.java:35)
+	at org.jboss.threads.EnhancedQueueExecutor.safeRun(EnhancedQueueExecutor.java:2019)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.doRunTask(EnhancedQueueExecutor.java:1558)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1449)
+	at org.xnio.XnioWorker$WorkerThreadFactory$1$1.run(XnioWorker.java:1280)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: org.springframework.data.redis.RedisConnectionFailureException: Unable to connect to Redis; nested exception is io.lettuce.core.RedisConnectionException: Unable to connect to localhost:6379
+	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory$ExceptionTranslatingConnectionProvider.translateException(LettuceConnectionFactory.java:1689)
+	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory$ExceptionTranslatingConnectionProvider.getConnection(LettuceConnectionFactory.java:1597)
+	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory$SharedConnection.getNativeConnection(LettuceConnectionFactory.java:1383)
+	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory$SharedConnection.getConnection(LettuceConnectionFactory.java:1366)
+	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory.getSharedConnection(LettuceConnectionFactory.java:1093)
+	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory.getConnection(LettuceConnectionFactory.java:421)
+	at org.springframework.data.redis.cache.DefaultRedisCacheWriter.execute(DefaultRedisCacheWriter.java:304)
+	at org.springframework.data.redis.cache.DefaultRedisCacheWriter.get(DefaultRedisCacheWriter.java:130)
+	at org.springframework.data.redis.cache.RedisCache.lookup(RedisCache.java:89)
+	at org.springframework.cache.support.AbstractValueAdaptingCache.get(AbstractValueAdaptingCache.java:58)
+	at org.springframework.cache.interceptor.AbstractCacheInvoker.doGet(AbstractCacheInvoker.java:73)
+	at org.springframework.cache.interceptor.CacheAspectSupport.findInCaches(CacheAspectSupport.java:571)
+	at org.springframework.cache.interceptor.CacheAspectSupport.findCachedItem(CacheAspectSupport.java:536)
+	at org.springframework.cache.interceptor.CacheAspectSupport.execute(CacheAspectSupport.java:402)
+	at org.springframework.cache.interceptor.CacheAspectSupport.execute(CacheAspectSupport.java:345)
+	at org.springframework.cache.interceptor.CacheInterceptor.invoke(CacheInterceptor.java:64)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:698)
+	at tech.noetzold.spyware.service.AlertService$$EnhancerBySpringCGLIB$$5379f76.findAll(<generated>)
+	at tech.noetzold.spyware.controller.AlertController.getAll(AlertController.java:49)
+	at tech.noetzold.spyware.controller.AlertController$$FastClassBySpringCGLIB$$24eb314.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:783)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:388)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:698)
+	at tech.noetzold.spyware.controller.AlertController$$EnhancerBySpringCGLIB$$53535a53.getAll(<generated>)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	... 97 common frames omitted
+Caused by: io.lettuce.core.RedisConnectionException: Unable to connect to localhost:6379
+	at io.lettuce.core.RedisConnectionException.create(RedisConnectionException.java:78)
+	at io.lettuce.core.RedisConnectionException.create(RedisConnectionException.java:56)
+	at io.lettuce.core.AbstractRedisClient.getConnection(AbstractRedisClient.java:330)
+	at io.lettuce.core.RedisClient.connect(RedisClient.java:216)
+	at org.springframework.data.redis.connection.lettuce.StandaloneConnectionProvider.lambda$getConnection$1(StandaloneConnectionProvider.java:115)
+	at java.base/java.util.Optional.orElseGet(Optional.java:369)
+	at org.springframework.data.redis.connection.lettuce.StandaloneConnectionProvider.getConnection(StandaloneConnectionProvider.java:115)
+	at org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory$ExceptionTranslatingConnectionProvider.getConnection(LettuceConnectionFactory.java:1595)
+	... 141 common frames omitted
+Caused by: io.netty.channel.AbstractChannel$AnnotatedConnectException: Connection refused: no further information: localhost/127.0.0.1:6379
+Caused by: java.net.ConnectException: Connection refused: no further information
+	at java.base/sun.nio.ch.SocketChannelImpl.checkConnect(Native Method)
+	at java.base/sun.nio.ch.SocketChannelImpl.finishConnect(SocketChannelImpl.java:779)
+	at io.netty.channel.socket.nio.NioSocketChannel.doFinishConnect(NioSocketChannel.java:330)
+	at io.netty.channel.nio.AbstractNioChannel$AbstractNioUnsafe.finishConnect(AbstractNioChannel.java:334)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:710)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:658)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:584)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:496)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:986)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+2023-07-07 14:24:41,331 INFO org.springframework.amqp.rabbit.listener.DirectMessageListenerContainer [SpringApplicationShutdownHook] Successfully waited for consumers to finish.
+2023-07-07 14:24:41,332 INFO io.undertow [SpringApplicationShutdownHook] stopping server: Undertow - 2.2.16.Final
+2023-07-07 14:24:41,337 INFO io.undertow.servlet [SpringApplicationShutdownHook] Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-07-07 14:24:41,348 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-07-07 14:24:41,351 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2023-07-07 14:24:41,356 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2023-07-07 14:24:49,388 INFO tech.noetzold.spyware.SpywareApplication [restartedMain] Starting SpywareApplication using Java 11.0.15.1 on hal9000 with PID 14376 (C:\Users\Usuário\Documents\Projetos\GitHub\spyware-API\target\classes started by Usuário in C:\Users\Usuário\Documents\Projetos\GitHub\spyware-API)
+2023-07-07 14:24:49,390 INFO tech.noetzold.spyware.SpywareApplication [restartedMain] No active profile set, falling back to 1 default profile: "default"
+2023-07-07 14:24:49,427 INFO org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor [restartedMain] Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-07-07 14:24:49,427 INFO org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor [restartedMain] For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-07-07 14:24:50,404 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-07-07 14:24:50,406 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-07-07 14:24:50,580 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 165 ms. Found 7 JPA repository interfaces.
+2023-07-07 14:24:50,589 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Multiple Spring Data modules found, entering strict repository configuration mode!
+2023-07-07 14:24:50,591 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2023-07-07 14:24:50,602 INFO org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport [restartedMain] Spring Data Redis - Could not safely identify store assignment for repository candidate interface tech.noetzold.spyware.repository.AlertRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2023-07-07 14:24:50,602 INFO org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport [restartedMain] Spring Data Redis - Could not safely identify store assignment for repository candidate interface tech.noetzold.spyware.repository.BadLanguageRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2023-07-07 14:24:50,602 INFO org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport [restartedMain] Spring Data Redis - Could not safely identify store assignment for repository candidate interface tech.noetzold.spyware.repository.ImageRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2023-07-07 14:24:50,603 INFO org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport [restartedMain] Spring Data Redis - Could not safely identify store assignment for repository candidate interface tech.noetzold.spyware.repository.MaliciousPortRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2023-07-07 14:24:50,603 INFO org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport [restartedMain] Spring Data Redis - Could not safely identify store assignment for repository candidate interface tech.noetzold.spyware.repository.MaliciousProcessRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2023-07-07 14:24:50,603 INFO org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport [restartedMain] Spring Data Redis - Could not safely identify store assignment for repository candidate interface tech.noetzold.spyware.repository.MaliciousWebsiteRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2023-07-07 14:24:50,603 INFO org.springframework.data.repository.config.RepositoryConfigurationExtensionSupport [restartedMain] Spring Data Redis - Could not safely identify store assignment for repository candidate interface tech.noetzold.spyware.repository.UserRepository. If you want this repository to be a Redis repository, consider annotating your entities with one of these annotations: org.springframework.data.redis.core.RedisHash (preferred), or consider extending one of the following types with your repository: org.springframework.data.keyvalue.repository.KeyValueRepository.
+2023-07-07 14:24:50,604 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [restartedMain] Finished Spring Data repository scanning in 6 ms. Found 0 Redis repository interfaces.
+2023-07-07 14:24:51,261 WARN io.undertow.websockets.jsr [restartedMain] UT026010: Buffer pool was not set on WebSocketDeploymentInfo, the default pool will be used
+2023-07-07 14:24:51,274 INFO io.undertow.servlet [restartedMain] Initializing Spring embedded WebApplicationContext
+2023-07-07 14:24:51,274 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [restartedMain] Root WebApplicationContext: initialization completed in 1846 ms
+2023-07-07 14:24:51,771 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Starting...
+2023-07-07 14:24:51,919 INFO com.zaxxer.hikari.HikariDataSource [restartedMain] HikariPool-1 - Start completed.
+2023-07-07 14:24:51,938 INFO org.flywaydb.core.internal.license.VersionPrinter [restartedMain] Flyway Community Edition 8.0.5 by Redgate
+2023-07-07 14:24:51,938 INFO org.flywaydb.core.internal.database.base.BaseDatabaseType [restartedMain] Database: jdbc:postgresql://localhost:5432/spywareApi (PostgreSQL 14.5)
+2023-07-07 14:24:51,977 INFO org.flywaydb.core.internal.command.DbValidate [restartedMain] Successfully validated 1 migration (execution time 00:00.019s)
+2023-07-07 14:24:51,984 INFO org.flywaydb.core.internal.command.DbMigrate [restartedMain] Current version of schema "public": 01
+2023-07-07 14:24:51,985 INFO org.flywaydb.core.internal.command.DbMigrate [restartedMain] Schema "public" is up to date. No migration necessary.
+2023-07-07 14:24:52,053 INFO org.hibernate.jpa.internal.util.LogHelper [restartedMain] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-07-07 14:24:52,091 INFO org.hibernate.Version [restartedMain] HHH000412: Hibernate ORM core version 5.6.5.Final
+2023-07-07 14:24:52,218 INFO org.hibernate.annotations.common.Version [restartedMain] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-07-07 14:24:52,329 INFO org.hibernate.dialect.Dialect [restartedMain] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2023-07-07 14:24:52,761 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [restartedMain] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-07-07 14:24:52,766 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [restartedMain] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-07-07 14:24:52,867 DEBUG org.hibernate.stat.internal.StatisticsInitiator [restartedMain] Statistics initialized [enabled=false]
+2023-07-07 14:24:53,379 INFO org.springframework.amqp.rabbit.connection.CachingConnectionFactory [restartedMain] Attempting to connect to: [localhost:5672]
+2023-07-07 14:24:53,420 INFO org.springframework.amqp.rabbit.connection.CachingConnectionFactory [restartedMain] Created new connection: rabbitConnectionFactory#5a2250b:0/SimpleConnection@6aa057b5 [delegate=amqp://admin@127.0.0.1:5672/, localPort= 64207]
+2023-07-07 14:24:53,556 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [restartedMain] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-07-07 14:24:53,678 INFO org.springframework.security.web.DefaultSecurityFilterChain [restartedMain] Will not secure any request
+2023-07-07 14:24:54,719 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer [restartedMain] LiveReload server is running on port 35729
+2023-07-07 14:24:54,725 INFO org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver [restartedMain] Exposing 15 endpoint(s) beneath base path '/actuator'
+2023-07-07 14:24:54,787 INFO io.undertow [restartedMain] starting server: Undertow - 2.2.16.Final
+2023-07-07 14:24:54,794 INFO org.xnio [restartedMain] XNIO version 3.8.6.Final
+2023-07-07 14:24:54,801 INFO org.xnio.nio [restartedMain] XNIO NIO Implementation Version 3.8.6.Final
+2023-07-07 14:24:54,859 INFO org.jboss.threads [restartedMain] JBoss Threads version 3.1.0.Final
+2023-07-07 14:24:54,896 INFO org.springframework.boot.web.embedded.undertow.UndertowWebServer [restartedMain] Undertow started on port(s) 8091 (http)
+2023-07-07 14:24:54,901 INFO org.springframework.amqp.rabbit.listener.DirectMessageListenerContainer [restartedMain] Container initialized for queues: [ALERT]
+2023-07-07 14:24:54,910 INFO org.springframework.amqp.rabbit.listener.DirectMessageListenerContainer [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-1] SimpleConsumer [queue=ALERT, index=0, consumerTag=amq.ctag-PCC9BIQEiTy_LuyTc_ZUrg identity=56fd7403] started
+2023-07-07 14:24:54,914 INFO tech.noetzold.spyware.SpywareApplication [restartedMain] Started SpywareApplication in 5.85 seconds (JVM running for 6.384)
+2023-07-07 14:24:55,812 INFO io.undertow.servlet [XNIO-1 task-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-07-07 14:24:55,812 INFO org.springframework.web.servlet.DispatcherServlet [XNIO-1 task-1] Initializing Servlet 'dispatcherServlet'
+2023-07-07 14:24:55,814 INFO org.springframework.web.servlet.DispatcherServlet [XNIO-1 task-1] Completed initialization in 2 ms
+2023-07-07 14:25:23,020 DEBUG org.hibernate.SQL [XNIO-1 task-1] select user0_.id as id1_6_, user0_.login as login2_6_, user0_.password as password3_6_ from usuario user0_ where user0_.login=?
+2023-07-07 14:25:23,629 DEBUG org.hibernate.SQL [XNIO-1 task-1] select alert0_.id as id1_0_, alert0_.data_cadastro as data_cad2_0_, alert0_.image as image3_0_, alert0_.pc_id as pc_id4_0_, alert0_.processos as processo5_0_ from alert alert0_ where alert0_.pc_id=?
+2023-07-07 14:25:26,721 DEBUG org.hibernate.SQL [XNIO-1 task-1] select user0_.id as id1_6_, user0_.login as login2_6_, user0_.password as password3_6_ from usuario user0_ where user0_.login=?
+2023-07-07 14:25:26,795 DEBUG org.hibernate.SQL [XNIO-1 task-1] select alert0_.id as id1_0_0_, alert0_.data_cadastro as data_cad2_0_0_, alert0_.image as image3_0_0_, alert0_.pc_id as pc_id4_0_0_, alert0_.processos as processo5_0_0_ from alert alert0_ where alert0_.id=?
+2023-07-07 14:25:55,698 DEBUG org.hibernate.SQL [XNIO-1 task-1] select user0_.id as id1_6_, user0_.login as login2_6_, user0_.password as password3_6_ from usuario user0_ where user0_.login=?
+2023-07-07 14:25:55,765 DEBUG org.hibernate.SQL [XNIO-1 task-1] select alert0_.id as id1_0_0_, alert0_.data_cadastro as data_cad2_0_0_, alert0_.image as image3_0_0_, alert0_.pc_id as pc_id4_0_0_, alert0_.processos as processo5_0_0_ from alert alert0_ where alert0_.id=?
+2023-07-07 17:59:02,212 DEBUG org.hibernate.SQL [XNIO-1 task-2] select user0_.id as id1_6_, user0_.login as login2_6_, user0_.password as password3_6_ from usuario user0_ where user0_.login=?
+2023-07-07 17:59:02,292 DEBUG org.hibernate.SQL [XNIO-1 task-2] select alert0_.id as id1_0_, alert0_.data_cadastro as data_cad2_0_, alert0_.image as image3_0_, alert0_.pc_id as pc_id4_0_, alert0_.processos as processo5_0_ from alert alert0_ where alert0_.pc_id=?
+2023-07-07 17:59:33,077 DEBUG org.hibernate.SQL [XNIO-1 task-2] select user0_.id as id1_6_, user0_.login as login2_6_, user0_.password as password3_6_ from usuario user0_ where user0_.login=?
+2023-07-07 17:59:33,145 DEBUG org.hibernate.SQL [XNIO-1 task-2] select alert0_.id as id1_0_, alert0_.data_cadastro as data_cad2_0_, alert0_.image as image3_0_, alert0_.pc_id as pc_id4_0_, alert0_.processos as processo5_0_ from alert alert0_ where alert0_.pc_id=?
+2023-07-07 18:01:32,918 DEBUG org.hibernate.SQL [XNIO-1 task-2] select user0_.id as id1_6_, user0_.login as login2_6_, user0_.password as password3_6_ from usuario user0_ where user0_.login=?
+2023-07-07 18:01:32,989 DEBUG org.hibernate.SQL [XNIO-1 task-2] select alert0_.id as id1_0_, alert0_.data_cadastro as data_cad2_0_, alert0_.image as image3_0_, alert0_.pc_id as pc_id4_0_, alert0_.processos as processo5_0_ from alert alert0_ where alert0_.pc_id=?
+2023-07-07 18:02:34,015 DEBUG org.hibernate.SQL [XNIO-1 task-2] select user0_.id as id1_6_, user0_.login as login2_6_, user0_.password as password3_6_ from usuario user0_ where user0_.login=?
+2023-07-07 18:02:34,092 DEBUG org.hibernate.SQL [XNIO-1 task-2] select alert0_.id as id1_0_, alert0_.data_cadastro as data_cad2_0_, alert0_.image as image3_0_, alert0_.pc_id as pc_id4_0_, alert0_.processos as processo5_0_ from alert alert0_ where alert0_.pc_id=?
+2023-07-07 18:03:54,377 DEBUG org.hibernate.SQL [XNIO-1 task-2] select user0_.id as id1_6_, user0_.login as login2_6_, user0_.password as password3_6_ from usuario user0_ where user0_.login=?
+2023-07-07 18:03:54,447 DEBUG org.hibernate.SQL [XNIO-1 task-2] select alert0_.id as id1_0_, alert0_.data_cadastro as data_cad2_0_, alert0_.image as image3_0_, alert0_.pc_id as pc_id4_0_, alert0_.processos as processo5_0_ from alert alert0_ where alert0_.pc_id=?
+2023-07-07 18:04:34,612 DEBUG org.hibernate.SQL [XNIO-1 task-2] select user0_.id as id1_6_, user0_.login as login2_6_, user0_.password as password3_6_ from usuario user0_ where user0_.login=?
+2023-07-07 18:04:34,685 DEBUG org.hibernate.SQL [XNIO-1 task-2] select alert0_.id as id1_0_, alert0_.data_cadastro as data_cad2_0_, alert0_.image as image3_0_, alert0_.pc_id as pc_id4_0_, alert0_.processos as processo5_0_ from alert alert0_ where alert0_.pc_id=?
+2023-07-07 18:05:30,815 DEBUG org.hibernate.SQL [XNIO-1 task-2] select user0_.id as id1_6_, user0_.login as login2_6_, user0_.password as password3_6_ from usuario user0_ where user0_.login=?
+2023-07-07 18:05:30,885 DEBUG org.hibernate.SQL [XNIO-1 task-2] select alert0_.id as id1_0_, alert0_.data_cadastro as data_cad2_0_, alert0_.image as image3_0_, alert0_.pc_id as pc_id4_0_, alert0_.processos as processo5_0_ from alert alert0_ where alert0_.pc_id=?
+2023-07-07 18:06:09,197 DEBUG org.hibernate.SQL [XNIO-1 task-2] select user0_.id as id1_6_, user0_.login as login2_6_, user0_.password as password3_6_ from usuario user0_ where user0_.login=?
+2023-07-07 18:06:09,267 DEBUG org.hibernate.SQL [XNIO-1 task-2] select alert0_.id as id1_0_, alert0_.data_cadastro as data_cad2_0_, alert0_.image as image3_0_, alert0_.pc_id as pc_id4_0_, alert0_.processos as processo5_0_ from alert alert0_ where alert0_.pc_id=?
+2023-07-07 18:06:56,133 DEBUG org.hibernate.SQL [XNIO-1 task-2] select user0_.id as id1_6_, user0_.login as login2_6_, user0_.password as password3_6_ from usuario user0_ where user0_.login=?
+2023-07-07 18:06:56,198 DEBUG org.hibernate.SQL [XNIO-1 task-2] select alert0_.id as id1_0_, alert0_.data_cadastro as data_cad2_0_, alert0_.image as image3_0_, alert0_.pc_id as pc_id4_0_, alert0_.processos as processo5_0_ from alert alert0_ where alert0_.pc_id=?
+2023-07-07 18:08:33,420 DEBUG org.hibernate.SQL [XNIO-1 task-2] select user0_.id as id1_6_, user0_.login as login2_6_, user0_.password as password3_6_ from usuario user0_ where user0_.login=?
+2023-07-07 18:08:33,491 DEBUG org.hibernate.SQL [XNIO-1 task-2] select alert0_.id as id1_0_, alert0_.data_cadastro as data_cad2_0_, alert0_.image as image3_0_, alert0_.pc_id as pc_id4_0_, alert0_.processos as processo5_0_ from alert alert0_ where alert0_.pc_id=?
+2023-07-07 18:10:02,764 DEBUG org.hibernate.SQL [XNIO-1 task-2] select user0_.id as id1_6_, user0_.login as login2_6_, user0_.password as password3_6_ from usuario user0_ where user0_.login=?
+2023-07-07 18:10:02,835 DEBUG org.hibernate.SQL [XNIO-1 task-2] select alert0_.id as id1_0_, alert0_.data_cadastro as data_cad2_0_, alert0_.image as image3_0_, alert0_.pc_id as pc_id4_0_, alert0_.processos as processo5_0_ from alert alert0_ where alert0_.pc_id=?
+2023-07-07 18:10:29,597 DEBUG org.hibernate.SQL [XNIO-1 task-2] select user0_.id as id1_6_, user0_.login as login2_6_, user0_.password as password3_6_ from usuario user0_ where user0_.login=?
+2023-07-07 18:10:29,662 DEBUG org.hibernate.SQL [XNIO-1 task-2] select alert0_.id as id1_0_, alert0_.data_cadastro as data_cad2_0_, alert0_.image as image3_0_, alert0_.pc_id as pc_id4_0_, alert0_.processos as processo5_0_ from alert alert0_ where alert0_.pc_id=?
+2023-07-07 18:16:23,847 DEBUG org.hibernate.SQL [XNIO-1 task-2] select user0_.id as id1_6_, user0_.login as login2_6_, user0_.password as password3_6_ from usuario user0_ where user0_.login=?
+2023-07-07 18:16:23,920 DEBUG org.hibernate.SQL [XNIO-1 task-2] select alert0_.id as id1_0_, alert0_.data_cadastro as data_cad2_0_, alert0_.image as image3_0_, alert0_.pc_id as pc_id4_0_, alert0_.processos as processo5_0_ from alert alert0_ where alert0_.pc_id=?
+2023-07-07 18:16:32,071 DEBUG org.hibernate.SQL [XNIO-1 task-2] select user0_.id as id1_6_, user0_.login as login2_6_, user0_.password as password3_6_ from usuario user0_ where user0_.login=?
+2023-07-07 18:20:37,028 DEBUG org.hibernate.SQL [XNIO-1 task-2] select user0_.id as id1_6_, user0_.login as login2_6_, user0_.password as password3_6_ from usuario user0_ where user0_.login=?
+2023-07-07 18:20:37,100 DEBUG org.hibernate.SQL [XNIO-1 task-2] select alert0_.id as id1_0_, alert0_.data_cadastro as data_cad2_0_, alert0_.image as image3_0_, alert0_.pc_id as pc_id4_0_, alert0_.processos as processo5_0_ from alert alert0_ where alert0_.pc_id=?
+2023-07-07 18:22:22,890 DEBUG org.hibernate.SQL [XNIO-1 task-2] select user0_.id as id1_6_, user0_.login as login2_6_, user0_.password as password3_6_ from usuario user0_ where user0_.login=?
+2023-07-07 18:22:22,960 DEBUG org.hibernate.SQL [XNIO-1 task-2] select alert0_.id as id1_0_, alert0_.data_cadastro as data_cad2_0_, alert0_.image as image3_0_, alert0_.pc_id as pc_id4_0_, alert0_.processos as processo5_0_ from alert alert0_ where alert0_.pc_id=?
+2023-07-07 18:22:43,509 DEBUG org.hibernate.SQL [XNIO-1 task-2] select user0_.id as id1_6_, user0_.login as login2_6_, user0_.password as password3_6_ from usuario user0_ where user0_.login=?
+2023-07-07 18:22:43,578 DEBUG org.hibernate.SQL [XNIO-1 task-2] select alert0_.id as id1_0_, alert0_.data_cadastro as data_cad2_0_, alert0_.image as image3_0_, alert0_.pc_id as pc_id4_0_, alert0_.processos as processo5_0_ from alert alert0_ where alert0_.pc_id=?
+2023-07-07 18:44:21,658 DEBUG org.hibernate.SQL [XNIO-1 task-2] select user0_.id as id1_6_, user0_.login as login2_6_, user0_.password as password3_6_ from usuario user0_ where user0_.login=?
+2023-07-07 18:44:21,731 DEBUG org.hibernate.SQL [XNIO-1 task-2] select alert0_.id as id1_0_, alert0_.data_cadastro as data_cad2_0_, alert0_.image as image3_0_, alert0_.pc_id as pc_id4_0_, alert0_.processos as processo5_0_ from alert alert0_ where alert0_.pc_id=?
+2023-07-07 18:44:27,452 DEBUG org.hibernate.SQL [XNIO-1 task-2] select user0_.id as id1_6_, user0_.login as login2_6_, user0_.password as password3_6_ from usuario user0_ where user0_.login=?
+2023-07-07 23:37:51,811 INFO org.springframework.amqp.rabbit.listener.DirectMessageListenerContainer [SpringApplicationShutdownHook] Successfully waited for consumers to finish.
+2023-07-07 23:37:51,813 INFO io.undertow [SpringApplicationShutdownHook] stopping server: Undertow - 2.2.16.Final
+2023-07-07 23:37:51,824 INFO io.undertow.servlet [SpringApplicationShutdownHook] Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-07-07 23:37:51,839 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-07-07 23:37:51,843 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2023-07-07 23:37:51,847 INFO com.zaxxer.hikari.HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
