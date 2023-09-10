@@ -25,7 +25,7 @@ public class BadLanguageController {
     private static final Logger logger = LoggerFactory.getLogger(BadLanguageController.class);
 
     @Transactional
-    @RequestMapping(value = "/getAll", method = RequestMethod.GET)
+    @RequestMapping(method = RequestMethod.GET)
     public ResponseEntity<Collection<BadLanguage>> getAll(HttpServletRequest request, HttpServletResponse response) {
         Collection<BadLanguage> badLanguages = badLanguageService.findAllBadLanguage();
         if (badLanguages.isEmpty()) {
@@ -35,7 +35,7 @@ public class BadLanguageController {
     }
 
     @Transactional
-    @RequestMapping(value = "/get/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public ResponseEntity<BadLanguage> getBadLanguageById(@PathVariable("id") long id) {
         if (id <= 0) {
             return new ResponseEntity<BadLanguage>(HttpStatus.BAD_REQUEST);
@@ -47,7 +47,7 @@ public class BadLanguageController {
         return new ResponseEntity<BadLanguage>(badLanguage, HttpStatus.OK);
     }
 
-    @RequestMapping(value = "/save", method = RequestMethod.POST)
+    @RequestMapping(method = RequestMethod.POST)
     public ResponseEntity<BadLanguage> save(@RequestBody BadLanguage badLanguage) {
         if (badLanguage == null) {
             return new ResponseEntity<BadLanguage>(HttpStatus.BAD_REQUEST);
@@ -64,7 +64,7 @@ public class BadLanguageController {
         return new ResponseEntity<BadLanguage>(badLanguage, HttpStatus.CREATED);
     }
 
-    @DeleteMapping("remove/{id}")
+    @DeleteMapping("/{id}")
     public String remover(@PathVariable("id") Long id) {
         badLanguageService.deleteBadLanguage(id);
         logger.info("Remove badLanguage: " + id);
