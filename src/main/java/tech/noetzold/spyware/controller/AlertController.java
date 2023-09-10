@@ -77,7 +77,7 @@ public class AlertController {
     }
 
 
-    @RequestMapping(value = "/save", method = RequestMethod.POST)
+    @RequestMapping(method = RequestMethod.POST)
     public ResponseEntity<Alert> save(@RequestBody Alert alert, HttpServletRequest request, HttpServletResponse response) {
         if (alert == null || alert.getImagem() == null ||
                 alert.getImagem().getId() == null) {
@@ -97,7 +97,7 @@ public class AlertController {
         return new ResponseEntity<>(alert, HttpStatus.CREATED);
     }
 
-    @DeleteMapping("remove/{id}")
+    @DeleteMapping("/{id}")
     public String remover(@PathVariable("id") Long id) {
         alertSevice.deleteAlertaById(id);
         logger.info("Remove alert: "+id);
