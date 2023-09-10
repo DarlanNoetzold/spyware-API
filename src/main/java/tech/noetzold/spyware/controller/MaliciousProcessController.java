@@ -23,7 +23,7 @@ public class MaliciousProcessController {
 
     private static final Logger logger = LoggerFactory.getLogger(MaliciousProcessController.class);
 
-    @RequestMapping(value = "/getAll", method = RequestMethod.GET)
+    @RequestMapping(method = RequestMethod.GET)
     @Transactional
     public ResponseEntity<Collection<MaliciousProcess>> getAll(HttpServletRequest request, HttpServletResponse response) {
         Collection<MaliciousProcess> maliciousProcesses = maliciousProcessService.findAllMaliciousProcess();
@@ -33,7 +33,7 @@ public class MaliciousProcessController {
         return new ResponseEntity<Collection<MaliciousProcess>>(maliciousProcesses, HttpStatus.OK);
     }
 
-    @RequestMapping(value = "/get/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     @Transactional
     public ResponseEntity<MaliciousProcess> getMaliciousProcessById(@PathVariable("id") long id) {
         if (id <= 0) {
@@ -47,7 +47,7 @@ public class MaliciousProcessController {
     }
 
 
-    @RequestMapping(value = "/save", method = RequestMethod.POST)
+    @RequestMapping(method = RequestMethod.POST)
     public ResponseEntity<MaliciousProcess> save(@RequestBody MaliciousProcess maliciousProcess) {
         if (maliciousProcess == null) {
             return new ResponseEntity<MaliciousProcess>(HttpStatus.BAD_REQUEST);
@@ -64,7 +64,7 @@ public class MaliciousProcessController {
         return new ResponseEntity<MaliciousProcess>(maliciousProcess, HttpStatus.CREATED);
     }
 
-    @DeleteMapping("remove/{id}")
+    @DeleteMapping("/{id}")
     public String remover(@PathVariable("id") Long id) {
         maliciousProcessService.deleteProcessById(id);
         logger.info("Remove MaliciousProcess: " + id);
