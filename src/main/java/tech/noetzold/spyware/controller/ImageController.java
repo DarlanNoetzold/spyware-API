@@ -24,7 +24,7 @@ public class ImageController {
 
     private static final Logger logger = LoggerFactory.getLogger(ImageController.class);
 
-    @RequestMapping(value = "/getAll", method = RequestMethod.GET)
+    @RequestMapping(method = RequestMethod.GET)
     @Transactional
     public ResponseEntity<Collection<Image>> getAll(HttpServletRequest request, HttpServletResponse response) {
         Collection<Image> images = imageService.findAllImages();
@@ -34,7 +34,7 @@ public class ImageController {
         return new ResponseEntity<Collection<Image>>(images, HttpStatus.OK);
     }
 
-    @RequestMapping(value = "/get/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     @Transactional
     public ResponseEntity<Image> getImagemById(@PathVariable("id") long id) {
         try {
@@ -52,7 +52,7 @@ public class ImageController {
     }
 
 
-    @RequestMapping(value = "/save", method = RequestMethod.POST)
+    @RequestMapping(method = RequestMethod.POST)
     public ResponseEntity<Image> save(@RequestBody Image image) {
         try {
             image = imageService.saveImagem(image);
