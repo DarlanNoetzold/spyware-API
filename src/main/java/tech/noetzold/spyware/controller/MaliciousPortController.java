@@ -24,7 +24,7 @@ public class MaliciousPortController {
 
     private static final Logger logger = LoggerFactory.getLogger(MaliciousPortController.class);
 
-    @RequestMapping(value = "/getAll", method = RequestMethod.GET)
+    @RequestMapping(method = RequestMethod.GET)
     @Transactional
     public ResponseEntity<Collection<MaliciousPort>> getAll(HttpServletRequest request, HttpServletResponse response) {
         Collection<MaliciousPort> maliciousPorts = maliciousPortService.findAllMaliciousPort();
@@ -34,7 +34,7 @@ public class MaliciousPortController {
         return new ResponseEntity<Collection<MaliciousPort>>(maliciousPorts, HttpStatus.OK);
     }
 
-    @RequestMapping(value = "/get/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     @Transactional
     public ResponseEntity<MaliciousPort> getMaliciousPortById(@PathVariable("id") long id) {
         if (id <= 0) {
@@ -48,7 +48,7 @@ public class MaliciousPortController {
     }
 
 
-    @RequestMapping(value = "/save", method = RequestMethod.POST)
+    @RequestMapping(method = RequestMethod.POST)
     public ResponseEntity<MaliciousPort> save(@RequestBody MaliciousPort maliciousPort) {
         if (maliciousPort == null || maliciousPort.getVulnarableBanners() == null) {
             return new ResponseEntity<MaliciousPort>(HttpStatus.BAD_REQUEST);
@@ -70,7 +70,7 @@ public class MaliciousPortController {
         return new ResponseEntity<MaliciousPort>(maliciousPort, HttpStatus.UNPROCESSABLE_ENTITY);
     }
 
-    @DeleteMapping("remove/{id}")
+    @DeleteMapping("/{id}")
     public String remover(@PathVariable("id") Long id) {
         logger.info("Remove MaliciousPort: " + id);
         maliciousPortService.deleteMaliciousPortById(id);
