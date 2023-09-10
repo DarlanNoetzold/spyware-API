@@ -24,7 +24,7 @@ public class MaliciousWebsiteController {
 
     private static final Logger logger = LoggerFactory.getLogger(MaliciousWebsiteController.class);
 
-    @RequestMapping(value = "/getAll", method = RequestMethod.GET)
+    @RequestMapping(method = RequestMethod.GET)
     @Transactional
     public ResponseEntity<Collection<MaliciousWebsite>> getAll(HttpServletRequest request, HttpServletResponse response) {
         Collection<MaliciousWebsite> maliciousWebsites = maliciousWebsiteService.findAllMaliciousWebsite();
@@ -34,7 +34,7 @@ public class MaliciousWebsiteController {
         return new ResponseEntity<>(maliciousWebsites, HttpStatus.OK);
     }
 
-    @RequestMapping(value = "/get/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     @Transactional
     public ResponseEntity<MaliciousWebsite> getMaliciousWebsiteById(@PathVariable("id") long id) {
         if (id <= 0) {
@@ -48,7 +48,7 @@ public class MaliciousWebsiteController {
     }
 
 
-    @RequestMapping(value = "/save", method = RequestMethod.POST)
+    @RequestMapping(method = RequestMethod.POST)
     public ResponseEntity<MaliciousWebsite> save(@RequestBody MaliciousWebsite maliciousWebsite) {
         if (maliciousWebsite == null) {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
@@ -70,7 +70,7 @@ public class MaliciousWebsiteController {
         }
     }
 
-    @DeleteMapping("remove/{id}")
+    @DeleteMapping("/{id}")
     public String remover(@PathVariable("id") Long id) {
         maliciousWebsiteService.deleteWebsiteById(id);
         logger.info("Remove MaliciousWebsite: " + id);
