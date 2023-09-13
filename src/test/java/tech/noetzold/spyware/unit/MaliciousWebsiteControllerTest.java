@@ -45,7 +45,7 @@ public class MaliciousWebsiteControllerTest {
 
         Mockito.when(maliciousWebsiteService.findAllMaliciousWebsite()).thenReturn(websites);
 
-        mockMvc.perform(MockMvcRequestBuilders.get("/website/getAll")
+        mockMvc.perform(MockMvcRequestBuilders.get("/website")
                         .header("Authorization", "Bearer " + generateToken()))
                 .andExpect(MockMvcResultMatchers.status().isOk());
     }
@@ -57,7 +57,7 @@ public class MaliciousWebsiteControllerTest {
 
         Mockito.when(maliciousWebsiteService.findMaliciousWebsiteById(1L)).thenReturn(website);
 
-        mockMvc.perform(MockMvcRequestBuilders.get("/website/get/1")
+        mockMvc.perform(MockMvcRequestBuilders.get("/website/1")
                         .header("Authorization", "Bearer " + generateToken()))
                 .andExpect(MockMvcResultMatchers.status().isOk())
                 .andExpect(MockMvcResultMatchers.jsonPath("$.url", Matchers.is("www.example.com")));
@@ -65,7 +65,7 @@ public class MaliciousWebsiteControllerTest {
 
     @Test
     public void testGetMaliciousWebsiteByIdInvalidId() throws Exception {
-        mockMvc.perform(MockMvcRequestBuilders.get("/website/get/0")
+        mockMvc.perform(MockMvcRequestBuilders.get("/website/0")
                         .header("Authorization", "Bearer " + generateToken()))
                 .andExpect(MockMvcResultMatchers.status().is4xxClientError());
     }
@@ -76,7 +76,7 @@ public class MaliciousWebsiteControllerTest {
 
         Mockito.when(maliciousWebsiteService.saveMaliciousWebsite(Mockito.any(MaliciousWebsite.class))).thenReturn(website);
 
-        mockMvc.perform(MockMvcRequestBuilders.post("/website/save")
+        mockMvc.perform(MockMvcRequestBuilders.post("/website")
                         .header("Authorization", "Bearer " + generateToken())
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(new ObjectMapper().writeValueAsString(website)))
@@ -85,7 +85,7 @@ public class MaliciousWebsiteControllerTest {
 
     @Test
     public void testRemoveMaliciousWebsite() throws Exception {
-        mockMvc.perform(MockMvcRequestBuilders.delete("/website/remove/1")
+        mockMvc.perform(MockMvcRequestBuilders.delete("/website/1")
                         .header("Authorization", "Bearer " + generateToken()))
                 .andExpect(MockMvcResultMatchers.status().isOk());
     }

@@ -103,7 +103,7 @@ public class AlertControllerTest {
         when(imageRepository.findById(anyLong())).thenReturn(Optional.of(new Image()));
         doNothing().when(rabbitmqService).enviaMensagem(anyString(), any());
 
-        mockMvc.perform(MockMvcRequestBuilders.post("/alert/save")
+        mockMvc.perform(MockMvcRequestBuilders.post("/alert")
                         .header("Authorization", "Bearer " + generateToken())
                         .content(asJsonString(alert))
                         .contentType(MediaType.APPLICATION_JSON))

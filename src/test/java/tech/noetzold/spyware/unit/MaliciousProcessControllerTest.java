@@ -46,7 +46,7 @@ public class MaliciousProcessControllerTest {
         Collection<MaliciousProcess> maliciousProcesses = new ArrayList<>();
         maliciousProcesses.add(maliciousProcess);
 
-        mockMvc.perform(get("/process/getAll")
+        mockMvc.perform(get("/process")
                         .header("Authorization", "Bearer " + generateToken()))
                 .andExpect(status().is2xxSuccessful());
     }
@@ -59,14 +59,14 @@ public class MaliciousProcessControllerTest {
 
         given(maliciousProcessService.findMaliciousProcessById(1L)).willReturn(maliciousProcess);
 
-        mockMvc.perform(get("/process/get/{id}", 1L)
+        mockMvc.perform(get("/process/{id}", 1L)
                         .header("Authorization", "Bearer " + generateToken()))
                 .andExpect(status().isOk());
     }
 
     @Test
     public void testGetMaliciousProcessByIdWithInvalidId() throws Exception {
-        mockMvc.perform(get("/process/get/{id}", 0L)
+        mockMvc.perform(get("/process/{id}", 0L)
                         .header("Authorization", "Bearer " + generateToken()))
                 .andExpect(status().isBadRequest());
     }
@@ -78,7 +78,7 @@ public class MaliciousProcessControllerTest {
 
         given(maliciousProcessService.saveMaliciousProcess(any(MaliciousProcess.class))).willReturn(maliciousProcess);
 
-        mockMvc.perform(post("/process/save")
+        mockMvc.perform(post("/process")
                         .header("Authorization", "Bearer " + generateToken())
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(asJsonString(maliciousProcess)))
@@ -87,7 +87,7 @@ public class MaliciousProcessControllerTest {
 
     @Test
     public void testRemoveMaliciousProcess() throws Exception {
-        mockMvc.perform(delete("/process/remove/{id}", 1L)
+        mockMvc.perform(delete("/process/{id}", 1L)
                         .header("Authorization", "Bearer " + generateToken()))
                 .andExpect(status().isOk());
 
