@@ -27,6 +27,6 @@ public class RAWebMvcConfigurer implements WebMvcConfigurer {
                 .allowedOrigins("http://localhost:8091")
                 .allowedOrigins("http://localhost:3000")// Add your frontend origin(s) here
                 .allowedMethods("GET", "POST", "PUT", "DELETE")
-                .allowCredentials(true);
+                .allowCredentials(false);
     }
 }
