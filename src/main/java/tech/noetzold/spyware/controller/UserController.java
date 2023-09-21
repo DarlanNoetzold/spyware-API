@@ -12,6 +12,7 @@ import tech.noetzold.spyware.service.UserService;
 import java.util.List;
 import java.util.Optional;
 
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/user")
 public class UserController {

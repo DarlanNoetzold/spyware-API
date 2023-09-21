@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.Collection;
 import java.util.Optional;
 
-@CrossOrigin
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/port")
 public class MaliciousPortController {

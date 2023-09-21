@@ -13,6 +13,8 @@ import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import tech.noetzold.spyware.service.DetalheUsuarioServiceImpl;
 
+import java.util.Collections;
+
 
 @EnableWebSecurity
 public class JWTConfiguracao extends WebSecurityConfigurerAdapter {
@@ -51,7 +53,12 @@ public class JWTConfiguracao extends WebSecurityConfigurerAdapter {
     CorsConfigurationSource corsConfigurationSource() {
         final UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
 
-        CorsConfiguration corsConfiguration = new CorsConfiguration().applyPermitDefaultValues();
+        CorsConfiguration corsConfiguration = new CorsConfiguration();
+        corsConfiguration.setAllowedOrigins(Collections.singletonList("*")); // Permite de qualquer origem
+        corsConfiguration.setAllowedMethods(Collections.singletonList("*")); // Permite todos os métodos HTTP
+        corsConfiguration.setAllowCredentials(true); // Permite credenciais (cookies)
+        corsConfiguration.applyPermitDefaultValues();
+
         source.registerCorsConfiguration("/**", corsConfiguration);
         return source;
     }
