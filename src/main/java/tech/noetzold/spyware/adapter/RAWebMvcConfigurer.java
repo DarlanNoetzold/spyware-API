@@ -21,7 +21,11 @@ public class RAWebMvcConfigurer implements WebMvcConfigurer {
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**")
-                .allowedOrigins("*") // Add your frontend origin(s) here
+                .allowedOrigins("http://localhost:3001")
+                .allowedOrigins("http://0.0.0.0:3001")
+                .allowedOrigins("http://127.0.0.1:3001")
+                .allowedOrigins("http://localhost:8091")
+                .allowedOrigins("http://localhost:3000")// Add your frontend origin(s) here
                 .allowedMethods("GET", "POST", "PUT", "DELETE")
                 .allowCredentials(true);
     }
